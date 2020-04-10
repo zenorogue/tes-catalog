@@ -84,7 +84,7 @@ function mayload(name)
 {
           q = getQueryVariable(name);
           if(q && q != "") {
-            q = "/files" + q.replace(/%2F/g, "/");
+            q = "files/" + q.replace(/%2F/g, "/");
             FS.createPreloadedFile("/", name, q, true, false);
             }
 }
