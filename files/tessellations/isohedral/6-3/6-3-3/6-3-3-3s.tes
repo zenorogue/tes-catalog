@@ -1,0 +1,7 @@
+##{6,3}, trihex 3S
+e2.
+angleunit(2*pi/3)
+angleofs(pi)
+unittile(1,1,1,2,1,1,1,2,1,1,1,2)
+conway("(0 1)(4 5)(8 9)(3 2)(7 6)(11 10)")
+sublines(1)

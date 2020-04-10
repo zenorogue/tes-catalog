@@ -1,0 +1,9 @@
+## {6,3}, dihex 1A2
+e2.
+angleunit(2*pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(1,1,1,1,2,1,1,1,1,2)
+# the Conway notation
+conway("(0)(4)(1 9)(3 5)(2 7)(6)(8)")
+sublines(1)

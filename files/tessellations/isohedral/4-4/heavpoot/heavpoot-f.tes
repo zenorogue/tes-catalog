@@ -1,0 +1,10 @@
+## {4,4}, Heavpoot F
+e2.
+angleunit(pi/2)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3)
+# the Conway notation
+conway("(0 5)(1 4)(2 3)(6 15)(7 14)(8 13)[9 11][10 12]")
+sublines(1)
+sublines(2)

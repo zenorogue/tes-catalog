@@ -1,0 +1,11 @@
+## {7,3}, heptagon 1A + dihept 1A2
+h2.
+angleunit(2*pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(7,3))
+unittile(1,1,1,1,1,1,1)
+unittile(1,1,1,1,1,2,1,1,1,1,1,2)
+# the Conway notation
+conway("(0)(1 2')(6 3')(2 0')(5 5')(3 11')(4 6')(1')(4')(7' 10')(8')(9')")
+sublines(1)

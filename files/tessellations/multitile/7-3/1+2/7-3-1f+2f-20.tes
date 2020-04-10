@@ -1,0 +1,9 @@
+## {7,3}, heptagon 1F + dihept 1F, solution 20
+h2.
+angleunit(2*pi/3)
+angleofs(pi)
+distunit(edge(7,3))
+unittile(1,1,1,1,1,1,1)
+unittile(1,1,1,1,1,2,1,1,1,1,1,2)
+conway("(0)(1 0')(2 11')(3 4')(4)(5 3')(6 1')(2')(5' 10')(6' 9')(7')(8')")
+sublines(1)

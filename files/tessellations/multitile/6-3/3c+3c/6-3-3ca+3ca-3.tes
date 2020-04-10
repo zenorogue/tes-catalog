@@ -1,0 +1,8 @@
+##{6,3}, trihex 3A + trihex 3A, solution 3
+e2.
+angleunit(2*pi/3)
+angleofs(pi)
+unittile(1,1,1,2,1,1,1,2,1,1,1,2)
+unittile(1,1,1,2,1,1,1,2,1,1,1,2)
+conway("(0 5')(11 6')(1)(10)(2 4')(9 7')(3 3')(8 8')(4 2')(7 9')(5 0')(6 11')(1')(10')")
+sublines(1)

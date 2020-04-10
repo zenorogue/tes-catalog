@@ -1,0 +1,8 @@
+##{6,3}, dihex 1F + trihex 1F, solution 17
+e2.
+angleunit(2*pi/3)
+angleofs(pi)
+unittile(1,1,1,1,2,1,1,1,1,2)
+unittile(1,1,1,1,2,1,1,2,1,1,1,1,2,2)
+conway("(0)(1 9)(2 0')(3 13')(4 12')(5 11')[6 4'][7 5'](8 1')[2' 6'][3' 10'](7' 9')(8')")
+sublines(1)

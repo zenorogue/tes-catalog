@@ -1,0 +1,10 @@
+##{4,6}, square 1A2 + domino 1F, solution 6
+h2.
+angleunit(pi/3)
+angleofs(pi)
+distunit(edge(4,6))
+unittile(1,1,1,1)
+unittile(1,1,2,1,1,2)
+unittile(1,1,2,1,1,2)
+conway("(0 0')(3 5'')(1 2')(2 3'')(1')(4'')(3')(2'')(4' 5')(1'' 0'')")
+sublines(1)

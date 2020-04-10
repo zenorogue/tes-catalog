@@ -1,0 +1,8 @@
+##{4,5}, Heavpoot, solution 322
+h2.
+angleunit(2*pi/5)
+angleofs(pi)
+distunit(edge(4,5))
+unittile(1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3)
+conway("(0 4)(1 16)[2 9](3 17)(5)(6 19)[7 14][8 15](10 12)(11)[13 18]")
+sublines(1)

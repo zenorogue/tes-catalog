@@ -1,0 +1,11 @@
+## {4,4}, Heavpoot R4+R4
+e2.
+angleunit(pi/2)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3)
+unittile(1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3)
+# the Conway notation
+conway("(0 1')(4 5')(8 9')(12 13')(1 0')(5 4')(9 8')(13 12')(2 3')(6 7')(10 11')(14 15')(3 2')(7 6')(11 10')(15 14')")
+sublines(1)
+sublines(2)

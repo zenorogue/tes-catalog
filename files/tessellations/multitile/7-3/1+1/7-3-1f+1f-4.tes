@@ -1,0 +1,11 @@
+## {7,3}, heptagon 1F + heptagon 1F, solution 4
+h2.
+angleunit(2*pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(7,3))
+unittile(1,1,1,1,1,1,1)
+unittile(1,1,1,1,1,1,1)
+# the Conway notation
+conway("(0)(1 0')(2 3)(4 6')(5 4')(6 1')(2' 3')(5')")
+sublines(1)

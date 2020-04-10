@@ -1,0 +1,9 @@
+## {6,3}, dihex 1R + dihex 1F, solution 18
+e2.
+angleunit(2*pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(1,1,1,1,2,1,1,1,1,2)
+unittile(1,1,1,1,2,1,1,1,1,2)
+# the Conway notation
+conway("(0 1')(1 7')[2 4'][3 5'](4 2')(5 1')(6 7')[7 4'][8 5'](9 2')(0' 8')[3' 6'](9')")

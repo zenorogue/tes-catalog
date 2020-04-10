@@ -1,0 +1,9 @@
+## {7,3}, dihept 1R + dihept 1F, solution 62
+h2.
+angleunit(2*pi/3)
+angleofs(pi)
+distunit(edge(7,3))
+unittile(1,1,1,1,1,2,1,1,1,1,1,2)
+unittile(1,1,1,1,1,2,1,1,1,1,1,2)
+conway("(0 1')(6 1')(1 6')(7 6')(2 5')(8 5')(3)(9)(4 4')(10 4')(5 2')(11 2')(0' 7')(3')(8' 11')(9')(10')")
+sublines(1)

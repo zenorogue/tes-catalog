@@ -1,0 +1,9 @@
+##{4,6}, domino 1R + domino 1F, solution 79
+h2.
+angleunit(pi/3)
+angleofs(pi)
+distunit(edge(4,6))
+unittile(1,1,2,1,1,2)
+unittile(1,1,2,1,1,2)
+conway("[0][3](1 2')(4 2')(2 4')(5 4')[0' 5'](1')[3']")
+sublines(1)

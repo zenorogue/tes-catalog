@@ -1,0 +1,9 @@
+##{4,5}, tromino 1A1 + tromino 1A1
+h2.
+angleunit(2*pi/5)
+angleofs(pi)
+distunit(edge(4,5))
+unittile(1,1,2,2,1,1,2,2)
+unittile(1,1,2,2,1,1,2,2)
+conway("(0 1)(6 5)(2 2')(4 4')(3 7')(7 3')(0' 1')(6' 5')")
+sublines(1)

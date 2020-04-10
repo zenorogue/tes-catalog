@@ -1,0 +1,12 @@
+## {3,8}, 90-degree octagon R8 + 45-degree octagon S2a
+h2.
+angleunit(pi/4)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(3,8))
+unittile(2,2,2,2,2,2,2,2)
+unittile(1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4)
+unittile(2,2,2,2,2,2,2,2)
+# the Conway notation
+conway("(0 1')(1 9')(2 1')(3 9')(4 1')(5 9')(6 1')(7 9')(0'' 6')(1'' 14')(2'' 6')(3'' 14')(4'' 6')(5'' 14')(6'' 6')(7'' 14')(0' 3')(8' 11')(7' 4')(15' 12')(2')(10')(5')(13')")
+sublines(1)

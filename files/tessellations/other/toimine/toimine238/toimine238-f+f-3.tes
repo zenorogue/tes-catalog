@@ -1,0 +1,9 @@
+## toimine238, F+F, solution 3
+h2.
+angleunit(pi/12)
+angleofs(pi)
+let(e8=edge(8,3)/2)
+let(e3=edge(3,8)/2)
+tile(e8,6,e3,6,e3,6,e8,8,e8,12,e8,8)
+tile(e3,3,e3,6,e8,16,e8,6,e3,3,e3,12)
+conway("(0 5)(1 1')(2 4')(3 3')(4 2')(0')(5')")

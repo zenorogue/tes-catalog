@@ -1,0 +1,8 @@
+##{6,3}, hexagon 1F + trihex 1F, solution 6
+e2.
+angleunit(2*pi/3)
+angleofs(pi)
+unittile(1,1,1,1,1,1)
+unittile(1,1,1,1,2,1,1,2,1,1,1,1,2,2)
+conway("(0)(1 0')(2 13')(3 12')[4 6'](5 1')[2' 7'][3' 8'][4' 10'][5' 11'](9')")
+sublines(1)

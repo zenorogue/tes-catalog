@@ -1,0 +1,8 @@
+##{3,6}, diamond 1F + tetriamond 1F, solution 24
+e2.
+angleunit(pi/3)
+angleofs(pi)
+unittile(1,2,1,2)
+unittile(1,2,3,1,2,3)
+conway("(0)[1 0'][2][3 5'][1'](2' 3')[4']")
+sublines(1)

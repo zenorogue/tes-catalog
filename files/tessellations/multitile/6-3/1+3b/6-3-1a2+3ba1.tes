@@ -1,0 +1,10 @@
+## {6,3}, hexagon 1A2 + trihex 2A1
+e2.
+angleunit(2*pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(1,1,1,1,1,1)
+unittile(1,1,1,1,2,1,2,1,1,1,1,2,1,2)
+# the Conway notation
+conway("(0 5)(1 5')(4 6')(2 4')(3 7')(0' 1')(11' 10')(2' 13')(9' 12')(3' 8')")
+sublines(1)

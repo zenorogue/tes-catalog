@@ -1,0 +1,9 @@
+## {3,6}, rhombi F+F, solution 11
+e2.
+angleunit(deg)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(60,120,60,120)
+unittile(30,150,30,150)
+# the Conway notation
+conway("(0 2)(1 0')[3 2'](1' 3')")

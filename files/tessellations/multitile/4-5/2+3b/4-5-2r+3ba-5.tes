@@ -1,0 +1,10 @@
+##{4,5}, domino 1R + tromino 2A, solution 5
+h2.
+angleunit(2*pi/5)
+angleofs(pi)
+distunit(edge(4,5))
+unittile(1,1,2,1,1,2)
+unittile(1,1,2,1,2,1,1,3)
+unittile(1,1,2,1,1,2)
+conway("(0 0')(3 0')(2'' 7')(5'' 7')(1 1'')(4 4'')(2 5')(5 5')(0'' 2')(3'' 2')(1' 4')(6' 3')")
+sublines(1)

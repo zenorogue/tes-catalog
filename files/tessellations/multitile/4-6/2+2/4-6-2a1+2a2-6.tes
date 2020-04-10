@@ -1,0 +1,9 @@
+##{4,6}, domino 1A1 + domino 1A2, solution 6
+h2.
+angleunit(pi/3)
+angleofs(pi)
+distunit(edge(4,6))
+unittile(1,1,2,1,1,2)
+unittile(1,1,2,1,1,2)
+conway("(0 5)(1 0')(4 2')(2 3)(1' 4')(3' 5')")
+sublines(1)

@@ -1,0 +1,10 @@
+## {5,4}, dipent 1F, solution 3
+h2.
+angleunit(pi/2)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(5,4))
+unittile(1,1,1,2,1,1,1,2)
+# the Conway notation
+conway("(0)(1)(2 7)(3 4)(5)(6)")
+sublines(1)

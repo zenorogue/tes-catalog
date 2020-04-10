@@ -1,0 +1,10 @@
+## {3,4}, tetriamond 3V, solution 1
+s2.
+angleunit(pi/2)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(3,4))
+unittile(2,2,2,2)
+# the Conway notation
+conway("(0)(1 3)(2)")
+sublines(2)

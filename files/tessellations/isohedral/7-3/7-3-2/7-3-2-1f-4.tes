@@ -1,0 +1,10 @@
+## {7,3}, dihept 1F, solution 4
+h2.
+angleunit(2*pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(7,3))
+unittile(1,1,1,1,1,2,1,1,1,1,1,2)
+# the Conway notation
+conway("(0)(1 11)(2 9)(3 6)(4 5)(7 8)(10)")
+sublines(1)

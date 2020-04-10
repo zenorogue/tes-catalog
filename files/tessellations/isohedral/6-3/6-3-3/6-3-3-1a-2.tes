@@ -1,0 +1,9 @@
+## {6,3}, trihex 1A, solution 1
+e2.
+angleunit(2*pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(1,1,1,1,2,1,1,2,1,1,1,1,2,2)
+# the Conway notation
+conway("(0 5)(12 7)(1 4)(11 8)(2 9)(10 3)(6 13)")
+sublines(1)

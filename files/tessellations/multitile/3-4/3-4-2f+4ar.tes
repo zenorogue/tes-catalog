@@ -1,0 +1,11 @@
+## {3,4}, diamond 1F + tetriamond 1R
+s2.
+angleunit(pi/2)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(3,4))
+unittile(1,2,1,2)
+unittile(1,2,3,1,2,3)
+# the Conway notation
+conway("(0)[1 1'][1 4'][2 2'][2 5'][3 0'][3 3']")
+sublines(1)

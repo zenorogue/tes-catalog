@@ -1,0 +1,11 @@
+## {3,8}, 90-degree octagon R8 + 45-degree octagon F, solution 2
+h2.
+angleunit(pi/4)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(3,8))
+unittile(2,2,2,2,2,2,2,2)
+unittile(1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4)
+# the Conway notation
+conway("(0 0')(1 8')(2 0')(3 8')(4 0')(5 8')(6 0')(7 8')(1' 6')(9' 14')(2' 5')(10' 13')[3'][11'][4'][12'](7')(15')")
+sublines(1)

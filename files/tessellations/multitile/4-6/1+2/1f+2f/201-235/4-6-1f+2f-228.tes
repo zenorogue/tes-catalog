@@ -1,0 +1,9 @@
+##{4,6}, square 1F + domino 1F, solution 228
+h2.
+angleunit(pi/3)
+angleofs(pi)
+distunit(edge(4,6))
+unittile(1,1,1,1)
+unittile(1,1,2,1,1,2)
+conway("(0 0')(1 5')(2 3')[3 1'](2')(4')")
+sublines(1)

@@ -1,0 +1,11 @@
+## {5,4}, pentagon 1R + pentagon 1F, solution 1
+h2.
+angleunit(pi/2)
+# the line below lets us specify internal angles
+angleofs(pi)
+distunit(edge(5,4))
+unittile(1,1,1,1,1)
+unittile(1,1,1,1,1)
+# the Conway notation
+conway("(0 0')(1 0')(2 0')(3 0')(4 0')(1')(2' 4')(3')")
+sublines(1)

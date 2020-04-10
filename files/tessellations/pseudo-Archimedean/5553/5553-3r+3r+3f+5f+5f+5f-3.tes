@@ -1,0 +1,13 @@
+## (5,5,5,3), triangle 1R + triangle 1R + triangle 1F + pentagon 1F + pentagon 1F + pentagon 1F, solution 3
+h2.
+distunit(arcmedge(5,5,5,3))
+angleofs(pi)
+let(u3 = regangle(1, 3))
+let(u5 = regangle(1, 5))
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u5,u5,u5,u5,u5)
+unittile(u5,u5,u5,u5,u5)
+unittile(u5,u5,u5,u5,u5)
+conway("(0 0''')(1 0''')(2 0''')(0' 4@5)(1' 4@5)(2' 4@5)(0'' 3''')(1'' 4@4)(2'' 1@5)(1''' 0@4)(2''')(4''' 1@4)(2@4 0@5)(3@4 3@5)(2@5)")

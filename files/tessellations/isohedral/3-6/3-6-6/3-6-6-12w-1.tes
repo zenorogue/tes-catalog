@@ -1,0 +1,10 @@
+## {3,6}, hexiamond 12W, solution 1
+## identical to {6,3}, included for completeness
+e2.
+angleunit(pi/3)
+# the line below lets us specify internal angles
+angleofs(pi)
+unittile(2,2,2,2,2,2)
+# the Conway notation
+conway("(0)(1)(2 5)(3)(4)")
+sublines(2)
