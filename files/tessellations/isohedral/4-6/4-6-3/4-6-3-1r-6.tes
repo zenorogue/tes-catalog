@@ -1,0 +1,8 @@
+##{4,6}, tromino 1R, solution 6
+h2.
+angleunit(pi/3)
+angleofs(pi)
+distunit(edge(4,6))
+unittile(1,1,2,2,1,1,2,2)
+conway("[0 1][4 5][2 3][6 7]")
+sublines(1)
