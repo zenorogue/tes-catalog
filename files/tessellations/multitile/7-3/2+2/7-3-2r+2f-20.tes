@@ -1,7 +1,6 @@
 ## {7,3}, dihept 1R + dihept 1F, solution 20
 h2.
 angleunit(2*pi/3)
-angleofs(pi)
 distunit(edge(7,3))
 unittile(1,1,1,1,1,2,1,1,1,1,1,2)
 unittile(1,1,1,1,1,2,1,1,1,1,1,2)

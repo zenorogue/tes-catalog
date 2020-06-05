@@ -1,8 +1,6 @@
 ## {3,6}, rhombi F+R, solution 3
 e2.
 angleunit(deg)
-# the line below lets us specify internal angles
-angleofs(pi)
 unittile(60,120,60,120)
 unittile(30,150,30,150)
 # the Conway notation

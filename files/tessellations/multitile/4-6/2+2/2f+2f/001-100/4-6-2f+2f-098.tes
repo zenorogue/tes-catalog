@@ -1,7 +1,6 @@
 ##{4,6}, domino 1F + domino 1F, solution 98
 h2.
 angleunit(pi/3)
-angleofs(pi)
 distunit(edge(4,6))
 unittile(1,1,2,1,1,2)
 unittile(1,1,2,1,1,2)

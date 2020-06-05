@@ -1,8 +1,6 @@
 ## {5,3}, tetrapent 1S, solution 1
 s2.
 angleunit(2*pi/3)
-# the line below lets us specify internal angles
-angleofs(pi)
 distunit(edge(5,3))
 unittile(1,1,1,2,1,2,2,1,1,1,2,1,2,2)
 # the Conway notation

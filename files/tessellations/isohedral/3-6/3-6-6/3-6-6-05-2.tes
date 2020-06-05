@@ -1,8 +1,6 @@
 ## {3,6}, hexiamond 5, solution 2
 e2.
 angleunit(pi/3)
-# the line below lets us specify internal angles
-angleofs(pi)
 unittile(1,2,3,2,1,4,1,4)
 # the Conway notation
 conway("(0)(1 6)(2 5)[3 4](7)")

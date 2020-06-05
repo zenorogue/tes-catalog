@@ -1,8 +1,6 @@
 ## {5,3}, dipent 1F + dipent 1F, solution 2
 s2.
 angleunit(2*pi/3)
-# the line below lets us specify internal angles
-angleofs(pi)
 distunit(edge(5,3))
 unittile(1,1,1,2,1,1,1,2)
 unittile(1,1,1,2,1,1,1,2)

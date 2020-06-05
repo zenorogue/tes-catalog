@@ -1,7 +1,6 @@
 ##{4,6}, tromino 2F, solution 50
 h2.
 angleunit(pi/3)
-angleofs(pi)
 distunit(edge(4,6))
 unittile(1,1,2,1,2,1,1,3)
 conway("(0)[1 7](2 6)(3)(4)(5)")

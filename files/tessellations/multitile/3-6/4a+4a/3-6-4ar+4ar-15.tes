@@ -1,7 +1,6 @@
 ##{3,6}, tetriamond 1R + tetriamond 1R, solution 15
 e2.
 angleunit(pi/3)
-angleofs(pi)
 unittile(1,2,3,1,2,3)
 unittile(1,2,3,1,2,3)
 conway("[0 2'][3 5'](1)(4)[2 0'][5 3'](1')(4')")

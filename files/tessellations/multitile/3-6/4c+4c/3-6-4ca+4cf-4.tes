@@ -1,7 +1,6 @@
 ##{3,6}, tetriamond 3A + tetriamond 3F, solution 4
 e2.
 angleunit(pi/3)
-angleofs(pi)
 unittile(1,2,2,2,1,4)
 unittile(1,2,2,2,1,4)
 unittile(1,2,2,2,1,4)

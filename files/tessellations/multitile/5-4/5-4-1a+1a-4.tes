@@ -1,8 +1,6 @@
 ## {5,4}, pentagon 1A + pentagon 1A, solution 4
 h2.
 angleunit(pi/2)
-# the line below lets us specify internal angles
-angleofs(pi)
 distunit(edge(5,4))
 unittile(1,1,1,1,1)
 unittile(1,1,1,1,1)

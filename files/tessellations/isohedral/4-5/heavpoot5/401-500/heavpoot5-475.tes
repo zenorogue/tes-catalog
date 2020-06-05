@@ -1,7 +1,6 @@
 ##{4,5}, Heavpoot, solution 475
 h2.
 angleunit(2*pi/5)
-angleofs(pi)
 distunit(edge(4,5))
 unittile(1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3)
 conway("(0 13)[1 15](2 4)(3)[5 16](6)[7 18][8 19][9 14](10 12)(11)(17)")

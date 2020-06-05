@@ -1,7 +1,6 @@
 ##{6,3}, trihex 1F, solution 9
 e2.
 angleunit(2*pi/3)
-angleofs(pi)
 unittile(1,1,1,1,2,1,1,2,1,1,1,1,2,2)
 conway("(0 1)(2 13)(3 12)(4 9)(5 8)(6 7)(10 11)")
 sublines(1)

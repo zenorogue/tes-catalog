@@ -1,8 +1,6 @@
 ## {3,4}, tetriamond 1S, solution 1
 s2.
 angleunit(pi/2)
-# the line below lets us specify internal angles
-angleofs(pi)
 distunit(edge(3,4))
 unittile(1,2,3,1,2,3)
 # the Conway notation

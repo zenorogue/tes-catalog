@@ -1,7 +1,6 @@
 ## toimine237
 h2.
 angleunit(pi/42)
-angleofs(pi)
 let(e7=edge(7,3)/2)
 let(e3=edge(3,7)/2)
 tile(e7,21,e3,24,e3,21,e7,28,e7,42,e7,28)

@@ -1,7 +1,6 @@
 ##{4,5}, domino 1A2 + tromino 1R, solution 3
 h2.
 angleunit(2*pi/5)
-angleofs(pi)
 distunit(edge(4,5))
 unittile(1,1,2,1,1,2)
 unittile(1,1,2,2,1,1,2,2)

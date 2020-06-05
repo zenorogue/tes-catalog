@@ -1,7 +1,6 @@
 ##{4,5}, square 1F + tromino 2F, solution 67
 h2.
 angleunit(2*pi/5)
-angleofs(pi)
 distunit(edge(4,5))
 unittile(1,1,1,1)
 unittile(1,1,2,1,2,1,1,3)

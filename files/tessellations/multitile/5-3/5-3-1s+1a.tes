@@ -1,8 +1,6 @@
 ## {5,3}, pentagon 1S + pentagon 1A
 s2.
 angleunit(2*pi/3)
-# the line below lets us specify internal angles
-angleofs(pi)
 distunit(edge(5,3))
 unittile(1,1,1,1,1)
 unittile(1,1,1,1,1)

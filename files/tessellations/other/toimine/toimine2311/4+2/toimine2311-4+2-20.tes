@@ -1,7 +1,6 @@
 ##toimine2311 (4+2), solution 20
 h2.
 angleunit(pi/66)
-angleofs(pi)
 let(e11=edge(11,3)/2)
 let(e3=edge(3,11)/2)
 tile(e11,33,e3,24,e3,33,e11,44,e11,66,e11,44)

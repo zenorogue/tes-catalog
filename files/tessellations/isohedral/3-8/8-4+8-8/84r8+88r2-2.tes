@@ -1,8 +1,6 @@
 ## {3,8}, 90-degree octagon R8 + 45-degree octagon F, solution 2
 h2.
 angleunit(pi/4)
-# the line below lets us specify internal angles
-angleofs(pi)
 distunit(edge(3,8))
 unittile(2,2,2,2,2,2,2,2)
 unittile(1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4)

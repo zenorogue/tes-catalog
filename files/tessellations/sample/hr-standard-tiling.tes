@@ -7,7 +7,6 @@ distunit(arcmedge(6,6,7))
 # note: subsequent results of arcmedge are given in terms of distunit
 
 # regangle(A,B) returns the internal angle of a B-gon with sidelength A
-# A is given in distunits, and result takes angleunit and angleofs into account
 
 let(u6 = regangle(1, 6))
 let(u7 = regangle(1, 7))

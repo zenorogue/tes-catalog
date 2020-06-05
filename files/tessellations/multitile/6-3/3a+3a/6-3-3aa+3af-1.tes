@@ -1,8 +1,6 @@
 ## {6,3}, trihex 1A + trihex 1F, solution 1
 e2.
 angleunit(2*pi/3)
-# the line below lets us specify internal angles
-angleofs(pi)
 unittile(1,1,1,1,2,1,1,2,1,1,1,1,2,2)
 unittile(1,1,1,1,2,1,1,2,1,1,1,1,2,2)
 unittile(1,1,1,1,2,1,1,2,1,1,1,1,2,2)

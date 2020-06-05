@@ -1,7 +1,6 @@
 ## toimine236, F+F, solution 1
 e2.
 angleunit(pi/6)
-angleofs(pi)
 let(e6=1/2)
 let(e3=sqrt(3)/2)
 tile(e6,3,e3,4,e3,3,e6,4,e6,6,e6,4)

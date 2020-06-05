@@ -1,7 +1,6 @@
 ## {7,3}, heptagon 1F + dihept 1F, solution 40
 h2.
 angleunit(2*pi/3)
-angleofs(pi)
 distunit(edge(7,3))
 unittile(1,1,1,1,1,1,1)
 unittile(1,1,1,1,1,2,1,1,1,1,1,2)

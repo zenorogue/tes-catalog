@@ -1,7 +1,6 @@
 ## toimine235, 2+1, solution 2
 s2.
 angleunit(pi/30)
-angleofs(pi)
 let(e5=edge(5,3)/2)
 let(e3=edge(3,5)/2)
 tile(e5,15,e3,24,e3,15,e5,20,e5,30,e5,20)

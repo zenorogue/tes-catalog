@@ -1,7 +1,6 @@
 ##{4,6}, square 1F + domino 1F, solution 95
 h2.
 angleunit(pi/3)
-angleofs(pi)
 distunit(edge(4,6))
 unittile(1,1,1,1)
 unittile(1,1,2,1,1,2)

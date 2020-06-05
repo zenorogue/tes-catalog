@@ -1,8 +1,6 @@
 ## {3,5}, triangle 1F + tetriamond 3F
 s2.
 angleunit(2*pi/5)
-# the line below lets us specify internal angles
-angleofs(pi)
 distunit(edge(3,5))
 unittile(1,1,1)
 unittile(1,2,2,2,1,4)

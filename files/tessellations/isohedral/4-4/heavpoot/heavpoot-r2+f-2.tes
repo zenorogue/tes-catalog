@@ -1,8 +1,6 @@
 ## {4,4}, Heavpoot R2+F, solution 2
 e2.
 angleunit(pi/2)
-# the line below lets us specify internal angles
-angleofs(pi)
 unittile(1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3)
 unittile(1,1,2,3,1,1,2,3,1,1,2,3,1,1,2,3)
 # the Conway notation

@@ -1,7 +1,6 @@
 ## toimine239
 h2.
 angleunit(pi/18)
-angleofs(pi)
 let(e9=edge(9,3)/2)
 let(e3=edge(3,9)/2)
 tile(e9,9,e3,8,e3,9,e9,12,e9,18,e9,12)

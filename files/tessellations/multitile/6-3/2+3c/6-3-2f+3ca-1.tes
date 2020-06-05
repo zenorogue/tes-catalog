@@ -1,7 +1,6 @@
 ##{6,3}, dihex 1F + trihex 3A, solution 1
 e2.
 angleunit(2*pi/3)
-angleofs(pi)
 unittile(1,1,1,1,2,1,1,1,1,2)
 unittile(1,1,1,2,1,1,1,2,1,1,1,2)
 unittile(1,1,1,1,2,1,1,1,1,2)

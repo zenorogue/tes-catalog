@@ -1,7 +1,6 @@
 ## (5,5,5,3), triangle 1A + triangle 1F + pentagon 1R + pentagon 1A + pentagon 1F + pentagon 1F
 h2.
 distunit(arcmedge(5,5,5,3))
-angleofs(pi)
 let(u3 = regangle(1, 3))
 let(u5 = regangle(1, 5))
 unittile(u3,u3,u3)

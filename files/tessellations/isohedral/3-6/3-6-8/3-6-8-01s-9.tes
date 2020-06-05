@@ -1,8 +1,6 @@
 ## {3,6}, octiamond 1S, solution 9
 e2.
 angleunit(pi/3)
-# the line below lets us specify internal angles
-angleofs(pi)
 unittile(1,2,3,3,3,1,2,3,3,3)
 # the Conway notation
 conway("[0 3](1 6)[2 9][4 7][5 8]")
