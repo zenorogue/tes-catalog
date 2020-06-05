@@ -34,8 +34,17 @@ void set_value(string name, string s) {
     );
   }
 
+void set_location(string s) {
+  EM_ASM_({
+    var value = UTF8ToString($0, $1);
+    window.history.pushState(value, document.title + ":"+value, "?c=" + value);
+    }, s.c_str(), int(s.size())
+    );
+  }
+
 string genlink(string to, string cap) {
-  return "<a href=\"./?c=" + to + "\">" + cap + "</a>";
+  // return "<a href=\"./?c=" + to + "\">" + cap + "</a>";
+  return "<a href=\"javascript:jump('" + to + "')\">" + cap + "</a>";
   }
 
 vector<tuple<string, string, int> > restrictions = {
@@ -56,7 +65,8 @@ int numstrcmp(const char *a, const char *b) {
   }
 
 void generate_page(string s) {
-  srand(time(NULL));
+  set_location(s);
+  srand(time(NULL));  
   string out;
   string parent;
   

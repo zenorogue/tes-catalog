@@ -190,6 +190,10 @@ function mayload(name)
     <script async type="text/javascript" src="tescat.js"></script>
     <script> 
       function doit(s) { Module.ccall('doit', 'null', ['string'], [s]); }
+      function jump(s) { Module.ccall('doit', 'null', ['string'], [s]); }
+
+      window.onpopstate = function(event) { jump(event.state) }
+
       function run_main() { 
         Module.on = 1;
         doit(mayload("c")); 
