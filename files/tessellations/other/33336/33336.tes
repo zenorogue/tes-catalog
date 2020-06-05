@@ -1,0 +1,8 @@
+## (3,3,3,3,6)
+e2.
+angleunit(pi/3)
+unittile(2,2,2,2,2,2)
+unittile(1,1,1)
+unittile(1,1,1)
+# the Conway notation
+conway("(0 0')(1 0')(2 0')(3 0')(4 0')(5 0')(1')(2' 0'')(2' 1'')(2' 2'')")

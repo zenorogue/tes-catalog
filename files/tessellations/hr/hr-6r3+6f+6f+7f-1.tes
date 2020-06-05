@@ -1,0 +1,20 @@
+## HyperRogue tiling, 6R3/6F/6F/7F, solution 1
+h2.
+
+# we compute the edge length
+distunit(arcmedge(6,6,7))
+
+# note: subsequent results of arcmedge are given in terms of distunit
+
+# regangle(A,B) returns the internal angle of a B-gon with sidelength A
+
+let(u6 = regangle(1, 6))
+let(u7 = regangle(1, 7))
+
+unittile(u6,u6,u6,u6,u6,u6)
+unittile(u6,u6,u6,u6,u6,u6)
+unittile(u6,u6,u6,u6,u6,u6)
+unittile(u7,u7,u7,u7,u7,u7,u7)
+
+# the Conway notation
+conway("(0 0')(2 0')(4 0')(1 0''')(3 0''')(5 0''')(1' 6''')(2')(3' 5''')(4' 0'')(5' 1''')(1'' 4''')(2'')(3'' 3''')(4'')(5'' 2''')")

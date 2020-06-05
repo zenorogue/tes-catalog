@@ -1,0 +1,11 @@
+## triangle 60-30-15
+h2.
+let(ed= arcmedge(6,12,24))
+let(ua= -regangle(ed,6))
+let(ub= -regangle(ed,12))
+let(uc= -regangle(ed,24))
+let(ea= edge(2*pi/ua,6)/2)
+let(eb= edge(2*pi/ub,12)/2)
+let(ec= edge(2*pi/uc,24)/2)
+tile(ea+ec,pi/12,eb+ec,pi/6,ea+eb,pi/3)
+conway("[0][1](2)")

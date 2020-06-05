@@ -1,0 +1,10 @@
+## {4,7}, square 1S2b + tromino 1R
+h2.
+angleunit(2*pi/7)
+distunit(edge(4,7))
+unittile(1,1,1,1)
+unittile(1,1,2,2,1,1,2,2)
+unittile(1,1,2,2,1,1,2,2)
+# the Conway notation
+conway("(0 0')(2 4')(1 2'')(3 6'')(1' 3'')(5' 7'')(1'' 3')(5'' 7')(2' 0'')(6' 4'')")
+sublines(1)

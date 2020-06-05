@@ -1,0 +1,8 @@
+##{4,7}, square 1R2 + tromino 1F, solution 11
+h2.
+angleunit(2*pi/7)
+distunit(edge(4,7))
+unittile(1,1,1,1)
+unittile(1,1,2,2,1,1,2,2)
+conway("(0)(2)(1 0')(3 0')(1' 6')(2')(3')(4')(5')(7')")
+sublines(1)

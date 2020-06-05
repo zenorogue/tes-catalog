@@ -1,0 +1,130 @@
+S4: 0 | 
+(e1,a1,e1,a1,e1,a1,e1,a1)
+Square, equilateral and equiangular.
+1: (0)
+ 0/0(a1)-
+ a1 | 2pi
+ Regular square tilings {4,3}, {4,4}, {4,5}, etc.
+ HyperRogue Conway symbol: (0)(1)(2)(3)
+
+R4: 0 | 0 | 
+(e1,a1,e1,a1,e1,a1,e1,a1)
+Also a square.
+1: (0)
+ 0/0(a1)-
+ a1 | 2pi
+ Identical to S4-1.
+2: [0]
+ 0/*0(a1)-*0/0(a1)-
+ a1 | pi
+ Checkerboard tilings on {4,4}, {4,6}, {4,8}, etc. Overall identical to S4-1.
+
+S2a: 0 1 | 
+(e1,a1,e2,a1,e1,a1,e2,a1)
+Rectangle, opposite sides equal, equiangular.
+1: (0)(1)
+ 0/1(a1)-1/0(a1)-
+ a1 | pi
+ Various rectangular variants of {4,4}, {4,6}, {4,8}, etc.
+ HyperRogue Conway symbol: (0)(1)(2)(3)
+2: (0 1)
+ 0/1(a1)-
+ 1/0(a1)-
+ Requires e1=e2, thus reduces to S4-1.
+
+S2b: 0 0 | 
+(e1,a1,e1,a2,e1,a1,e1,a2)
+Rhombus, equilateral, opposite angles equal.
+1: (0)
+ 0/*0(a1)-*0/0(a2)-
+ a1+a2 | 2pi
+ For a1+a2 = 2pi, we get a sphere divided into two complementary quadrangles.
+ For a1+a2 = pi, we get various Euclidean rhombus tilings that are skewed versions of {4,4}.
+ For other values, this tiling exists for every rhombus with a specific area.
+ HyperRogue Conway symbol: (0)(1)(2)(3)
+2: [0]
+ 0/*0(a1)-
+ *0/0(a2)-
+ a1 | 2pi, a2 | 2pi
+ These are Catalan duals of rectified tilings.
+ HyperRogue Conway symbol: (0 1)(2 3)
+
+R2: 0 1 | 0 1 | 
+(e1,a1,e2,a2,e1,a1,e2,a2)
+Parallelogram, opposite sides equal, opposite angles equal.
+1: (0)(1)
+ 0/1(a1)-1/0(a2)-
+ a1+a2 | 2pi
+ Similar to S2b-1, just with two different edge lengths.
+ HyperRogue Conway symbol: (0)(1)(2)(3)
+2: (0)[1]
+ 0/1(a1)-*1/*0(a1)-*0/*1(a2)-1/0(a2)-
+ a1+a2 | pi
+ "Staggered" tiling. If e1=e2, this yields a new type of rhombus tiling. Think parallelogram tilings in E2 where the orientation of rows switches. If e1<>e2, orientation matters and switching (e1,a1)<->(e2,a2) yields a different tiling.
+ HyperRogue Conway symbol: (0)[1](2)[3]
+3: (0 1)
+ 0/1(a1)-
+ 1/0(a2)-
+ a1 | 2pi, a2 | 2pi
+ e1=e2, reduces to S2b-2.
+4: [0][1]
+ 0/1(a1)-*1/*0(a1)-
+ 1/0(a2)-*0/*1(a2)-
+ a1 | pi, a2 | pi
+ Similar to S2b-2. Two different edge lengths force the number of tiles around each vertex to be even.
+ HyperRogue Conway symbol: [0][1][2][3]
+5: [0 1]
+ 0/1(a1)-*0/*1(a2)-
+ 1/0(a2)-*1/*0(a1)-
+ e1=e2, reduces to S2b-1.
+
+A1: 0 1 2 1 | 
+(e1,a1,e2,a2,e3,a2,e2,a1)
+Trapezoid, one pair of opposite sides equal, two pairs of adjacent angles equal.
+1: (0)(1)(2)
+ 0/1(a1)-1/2(a2)-2/*1(a2)-*1/0(a1)-
+ a1+a2 | pi
+ HyperRogue Conway symbol: (0)(1)(2)(3)
+2: (0)[1](2)
+ 0/1(a1)-*1/0(a1)-
+ 1/2(a2)-2/*1(a2)-
+ a1 | pi, a2 | pi
+ HyperRogue Conway symbol: (0)(1 3)(2)
+3: (0 2)(1)
+ 0/1(a1)-1/2(a2)-
+ 2/*1(a2)-*1/0(a1)-
+ a1+a2 | 2pi
+ e1=e3, reduces to S2a-1
+4: (0 2)[1]
+ 0/1(a1)-*1/0(a1)-2/*1(a2)-1/2(a2)-
+ a1+a2 | pi
+ e1=e3, reduces to S2a-1
+
+A2: 0 1 1 0 | 
+(e1,a1,e2,a2,e2,a1,e1,a3)
+Deltoid, two pairs of adjacent sides equal, one pair of opposite angles equal.
+1: (0)(1)
+ 0/1(a1)-1/*1(a2)-*1/*0(a1)-*0/0(a3)-
+ 2a1+a2+a3 | 2pi
+ HyperRogue Conway symbol: (0)(1)(2)(3)
+2: (0)[1]
+ 0/1(a1)-*1/*0(a1)-*0/0(a3)-
+ 1/*1(a2)-
+ 2a1+a3 | 2pi, a2 | 2pi
+ HyperRogue Conway symbol: (0)(1 2)(3)
+3: (0 1)
+ 0/1(a1)-
+ 1/*1(a2)-*0/0(a3)-
+ *1/*0(a1)-
+ a1 | 2pi, a2+a3 | 2pi
+ e1=e2, reduces to S2b-2
+4: [0 1]
+ 0/1(a1)-*0/0(a3)-*1/*0(a1)-1/*1(a2)-
+ 2a1+a2+a3 | 2pi
+ e1=e2, reduces to S2b-1
+5: [0][1]
+ 0/1(a1)-*1/*0(a1)-
+ 1/*1(a2)-
+ *0/0(a3)-
+ a1 | pi, a2 | 2pi, a3 | 2pi
+ HyperRogue Conway symbol: (0 3)(1 2)

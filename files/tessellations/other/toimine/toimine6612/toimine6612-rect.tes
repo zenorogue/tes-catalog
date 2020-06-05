@@ -1,0 +1,8 @@
+## toimine6612, 111, solution 10
+h2.
+angleunit(pi/3)
+let(e12=edge(12,3))
+let(e6=(edge(6,12)-e12)/2)
+tile(e6,1,e6+e12,1,e6,1,e6+e12,1)
+tile(e6,1,e6+e12,1,e6,1,e6+e12,1)
+conway("(0 0')(1 1')(2 2')(3 3')")

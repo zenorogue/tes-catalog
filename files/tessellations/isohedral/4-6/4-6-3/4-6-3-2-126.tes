@@ -1,0 +1,8 @@
+## {4,6}, tromino 2, solution 126
+h2.
+angleunit(pi/3)
+distunit(edge(4,6))
+unittile(1,1,2,1,2,1,1,3)
+# the Conway notation
+conway("(0 7)(1 3)(2)(4 6)[5]")
+sublines(1)

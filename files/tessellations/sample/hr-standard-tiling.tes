@@ -1,9 +1,8 @@
-## {4,6}, tromino 1S, solution 1
+## HyperRogue standard tiling
 h2.
 
-# we compute the edge length
+# we compute the edge length of the Archimedean tessellation we are using
 distunit(arcmedge(6,6,7))
-
 # note: subsequent results of arcmedge are given in terms of distunit
 
 # regangle(A,B) returns the internal angle of a B-gon with sidelength A

@@ -1,0 +1,8 @@
+## {4,6}, domino 1S, solution 4
+h2.
+angleunit(pi/3)
+distunit(edge(4,6))
+unittile(1,1,2,1,1,2)
+# the Conway notation
+conway("(0 5)(1 4)(2 3)")
+sublines(1)

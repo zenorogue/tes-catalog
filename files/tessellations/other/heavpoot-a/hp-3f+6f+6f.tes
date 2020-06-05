@@ -1,0 +1,7 @@
+## Heavpoot's triangle/hexagon/hexagon, F+F+F
+e2.
+angleunit(pi/3)
+unittile(1,1,1)
+unittile(2,2,2,2,2,2)
+unittile(2,2,2,2,2,2)
+conway("(0 1)(2 0')(1' 5')(2' 0'')(3' 3'')(4' 1'')(2'')(4'' 5'')")

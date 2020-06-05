@@ -1,0 +1,8 @@
+## Quadrangle tiling F-15, example
+h2.
+angleunit(deg)
+let(e1=edge_angles(30,36,90))
+let(e2=edge_angles(36,30,90))
+let(e3=edge_angles(90,30,36))
+tile(2*e2,60,2*e2,30,e1+e3,90,e2,60)
+conway("(0 1)[2][3]")

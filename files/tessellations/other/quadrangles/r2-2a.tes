@@ -1,0 +1,6 @@
+## Quadrangle tiling R2-2, example with e1=e2.
+h2.
+angleunit(pi/6)
+distunit(edge(3,12))
+unittile(1,2,1,2)
+conway("(0)[1](2)[3]")

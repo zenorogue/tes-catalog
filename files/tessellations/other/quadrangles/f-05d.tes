@@ -1,0 +1,8 @@
+## Quadrangle tiling F-5, example
+e2.
+angleunit(deg)
+let(e1=(1+sqrt(5))/4)
+let(e2=sqrt(5/8 - sqrt(5)/8))
+let(e3=1)
+tile(e1+e3,90,e2,108,2*e2,108,2*e2,54)
+conway("(0)(1)[2 3]")

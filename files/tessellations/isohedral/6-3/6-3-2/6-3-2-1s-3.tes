@@ -1,0 +1,7 @@
+## {6,3}, dihex 1S, solution 3
+e2.
+angleunit(2*pi/3)
+unittile(1,1,1,1,2,1,1,1,1,2)
+# the Conway notation
+conway("[0 2][1 9](3 8)[4 6][5 7]")
+sublines(1)

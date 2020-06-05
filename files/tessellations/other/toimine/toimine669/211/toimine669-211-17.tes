@@ -1,0 +1,10 @@
+## toimine669, 211, solution 17
+h2.
+angleunit(pi/9)
+let(e9=edge(9,3))
+let(e6=(edge(9/2,9)-e9)/2)
+tile(e6,2,e6,3,e9,3)
+tile(e6,2,e6,3,e9,3)
+tile(e6,2,e6,6,e6,2,e6,6)
+tile(e9,3,e6,4,e6,3,e9,6)
+conway("(0)(1 0')(2 2')(1' 0'')(1'' 3'')(2'' 1''')(0''' 3''')(2''')")

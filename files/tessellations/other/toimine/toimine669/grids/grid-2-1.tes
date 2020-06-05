@@ -1,0 +1,9 @@
+## 669 grid 2-1
+h2.
+angleunit(pi/9)
+let(e9=edge(9,3))
+let(e6=(edge(9/2,9)-e9)/2)
+tile(e6,2,e6,3,e9,3)
+tile(e6,2,e6,3,e9,3)
+tile(e6,2,e6,3,e9,3)
+conway("(0 1')(1 0'')(2)(0' 1'')(2')(2'')")

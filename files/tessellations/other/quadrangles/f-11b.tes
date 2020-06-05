@@ -1,0 +1,8 @@
+## Quadrangle tiling F-11, example
+h2.
+angleunit(deg)
+let(e1=edge_angles(18,36,90))
+let(e2=edge_angles(36,18,90))
+let(e3=edge_angles(90,18,36))
+tile(e1+e3,90,e2,36,2*e2,36,2*e2,18)
+conway("(0)[1][2 3]")

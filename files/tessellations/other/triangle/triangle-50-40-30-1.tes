@@ -1,0 +1,8 @@
+## triangle 50-40-30
+h2.
+angleunit(deg)
+let(e1= edge_angles(40,30,50))
+let(e2= edge_angles(50,30,40))
+let(e3= edge_angles(30,40,50))
+tile(e1,30,e2,40,e3,50)
+conway("(0)(1)(2)")

@@ -1,0 +1,8 @@
+##{4,7}, domino 2F + domino 2F, solution 22
+h2.
+angleunit(2*pi/7)
+distunit(edge(4,7))
+unittile(1,1,2,1,1,2)
+unittile(1,1,2,1,1,2)
+conway("(0)(1 2)(3)(4 0')(5 1')(2')(3')(4' 5')")
+sublines(1)

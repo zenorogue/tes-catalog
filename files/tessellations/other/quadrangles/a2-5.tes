@@ -1,0 +1,7 @@
+## Quadrangle tiling A2-5, example
+h2.
+angleunit(pi/60)
+let(e1=edge_angles(10,12,15))
+let(e2=edge_angles(15,10,12))
+tile(e1,12,e2,20,e2,12,e1,30)
+conway("(0 3)(1 2)")

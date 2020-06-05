@@ -1,0 +1,11 @@
+## Quadrangle tiling F-4, example
+h2.
+let(ed = arcmedge(4,4,6,12))
+let(u4 = -regangle(ed,4))
+let(u6 = -regangle(ed,6))
+let(u12 = -regangle(ed,12))
+let(e4 = edge(2*pi/u4,4)/2)
+let(e6 = edge(2*pi/u6,6)/2)
+let(e12 = edge(2*pi/u12,12)/2)
+tile(e4+e12,pi/6,e6+e12,pi/3,e4+e6,pi/2,2*e4,pi/2)
+conway("(0)(1)[2][3]")

@@ -1,0 +1,9 @@
+##{4,7}, square 1A2 + tromino 1F, solution 43
+h2.
+angleunit(2*pi/7)
+distunit(edge(4,7))
+unittile(1,1,1,1)
+unittile(1,1,2,2,1,1,2,2)
+unittile(1,1,2,2,1,1,2,2)
+conway("(0 3')(3 3'')(1 7')(2 7'')(0')(6'')(1' 4'')(5'' 2')(4')(2'')(5' 1'')(6')(0'')")
+sublines(1)

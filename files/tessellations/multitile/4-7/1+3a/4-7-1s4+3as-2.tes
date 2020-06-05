@@ -1,0 +1,9 @@
+## {4,7}, square 1S4 + tromino 1S, solution 2
+h2.
+angleunit(2*pi/7)
+distunit(edge(4,7))
+unittile(1,1,1,1)
+unittile(1,1,2,2,1,1,2,2)
+# the Conway notation
+conway("(0 3')(1 7')(2 3')(3 7')(0')(4')(2')(6')(1')(4')")
+sublines(1)

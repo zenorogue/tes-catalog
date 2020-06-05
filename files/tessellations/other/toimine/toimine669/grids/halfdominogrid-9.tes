@@ -1,0 +1,7 @@
+## half-domino grid 9
+e2.
+let(u=sqrt(5))
+let(a1=atan(1/2))
+let(a2=atan(2))
+tile(1,a1,u,a2,1,pi/2,1,pi)
+conway("[0 3](1)(2)")

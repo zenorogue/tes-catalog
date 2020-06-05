@@ -1,0 +1,6 @@
+## Quadrangle tiling S2b-1, example
+h2.
+angleunit(2*pi/9)
+distunit(edge(3,9))
+unittile(1,2,1,2)
+conway("(0)(1)(2)(3)")

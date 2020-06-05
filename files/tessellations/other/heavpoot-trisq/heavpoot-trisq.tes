@@ -1,0 +1,8 @@
+## Heavpoot - trisq
+h2.
+distunit(arcmedge(3,3,3,3,3,4,4,4,4,4,4))
+let(u3 = regangle(1, 3))
+let(u4 = regangle(1, 4))
+unittile(u3, u3+u4, u3+2*u4, u3+u4, u3, u3+u4, u3+2*u4, u3+2*u4, u3+2*u4, u3+u4,u3, u3+u4, u3+2*u4, u3+u4, u3, u3+u4, u3+2*u4, u3+2*u4, u3+2*u4, u3+u4, u3, u3+u4, u3+2*u4, u3+u4, u3, u3+u4, u3+2*u4, u3+2*u4, u3+2*u4, u3+u4)
+conway("(0)(10)(20)(1)(11)(21)(3 8)(13 18)(23 28)(9)(19)(29)(4)(14)(24)(5)(15)(25)(6)(16)(26)(7)(17)(27)")
+sublines(1)

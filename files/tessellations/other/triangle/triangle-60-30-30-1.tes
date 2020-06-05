@@ -1,0 +1,7 @@
+## triangle 60-30-30
+h2.
+angleunit(pi/6)
+let(x=edge(4,6))
+let(y=edge(6,6))
+tile(x,1,y,1,x,2)
+conway("(0)(2)(1)")

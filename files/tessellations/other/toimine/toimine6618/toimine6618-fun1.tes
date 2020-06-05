@@ -1,0 +1,7 @@
+## toimine6618, fundamental domain example
+h2.
+angleunit(pi/9)
+let(e18=edge(18,3))
+let(e6=(edge(9,18)-e18)/2)
+tile(e6,1,e6,6,e6,3,e6,3,e18,6,e18,9)
+conway("(0 1)(2 3)(4 5)")
