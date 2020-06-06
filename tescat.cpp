@@ -177,7 +177,9 @@ void generate_page(string s) {
     
     if(1) {
       string cline = 
-        "view.html?c=-viz+-noplayer";
+        "view.html?c=-viz";
+      
+      cline += "+-back+ffffff+-fore+0+-borders+ffffff";
       
       if(td.type >= 0) 
         cline += "+-zoom+.95";
