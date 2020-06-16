@@ -104,8 +104,16 @@ void generate_page(string s) {
       "<li> Links run the tessellation in the <a href=\"http://roguetemple.com/z/hyper/\">HyperRogue engine</a>, where you can view it from other angles, or make a "
       "high quality SVG screenshot (press shift+A)."
       "<li> All the tessellation files can be downloaded <a href=\"https://github.com/zenorogue/tes-catalog/releases\">here</a>."
-      "<li> In Archimedean tilings, the notation like \"A:(4,4); B:(4,4); \"(B,B,A,A,A) (1)(4)\" means that A and B can get any value which is at least 4 and divisible by 4.<br/><br/>"
-      "</ul>";
+      "<li> In Archimedean tilings, the notation like \"A:(4,4); B:(4,4); \"(B,B,A,A,A) (1)(4)\" means that A and B can get any value which is at least 4 and divisible by 4.";
+
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    if(tm.tm_mon == 5 && tm.tm_mday == 17)
+      out += "<li> <b>Happy World Tessellation Day!</b><br/>";
+    
+    out +=
+      "<li> Join the <a href=\"https://discord.gg/SnuhaW8\">#tessellation channel on the HyperRogue discord</a> for discussions!<br/>"
+      "</ul><br/><br/>";
     }
 
   out += "Curvature:";
