@@ -1,0 +1,9 @@
+## Triangle (2,4,5): 4-7 + 6-38, solution 2
+h2.
+angleunit(pi/20)
+let(e4=edge_angles(10,4,5))
+let(e8=edge_angles(5,4,10))
+let(e10=edge_angles(4,5,10))
+tile(e8,8,e8,10,e10,20,e10,10,e8,8,e8,20)
+tile(e10,10,e8,12,e4,10,e4,12,e8,10,e10,20)
+conway("(0 5)(1 1')(4 4')(2 0')(3 5')(2' 3')")

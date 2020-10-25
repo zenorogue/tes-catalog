@@ -1,0 +1,7 @@
+## Triangle (2,4,5): 2-2
+h2.
+angleunit(pi/20)
+let(e4=edge_angles(10,4,5))
+let(e10=edge_angles(4,5,10))
+tile(e10,5,e4,8,e4,5,e10,20)
+conway("(0 3)(1 2)")

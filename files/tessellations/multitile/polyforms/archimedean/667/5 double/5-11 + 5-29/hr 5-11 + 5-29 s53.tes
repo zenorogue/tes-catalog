@@ -1,0 +1,8 @@
+## Standard HyperRogue polyforms; 5-11 + 5-29, solution 53
+h2.
+distunit(arcmedge(6,6,7))
+let(a6 = regangle(1, 6))
+let(a7 = regangle(1, 7))
+unittile(a6,a6,a6,a6,2*a6,a6,a6+a7,a7,a7,a6+a7,a6,a6,a6+a7,a7,a7,a7,a7,a7,a6+a7,a6+a7,a7,a6+a7,a6,2*a6)
+unittile(a6,a6,a6,a6,2*a6,a6,a6,2*a6,a6,a6,2*a6,a6,a6+a7,a7,a7,a7,a7,a7,a6+a7,a6,2*a6,2*a6,2*a6)
+conway("[0 16'](1 10)(2 9)(3)(4 8)(5 7)(6)[11 17'](12 1')(13 0')(14 22')(15 21')(16 20')[17 4'][18 5'][19 6'][20 7'][21 8'][22 9'][23 15'][2' 18'][3' 19'](10' 14')(11' 13')(12')")

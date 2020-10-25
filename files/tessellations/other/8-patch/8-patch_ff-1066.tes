@@ -1,0 +1,7 @@
+## 8-patch + square, solution FF-1066
+h2.
+angleunit(2*pi/5)
+distunit(edge(4,5))
+unittile(1,2,1,2,1,2,2,1,2,1,2,1,2,2)
+unittile(1,1,1,1)
+conway("[0 6](1)[2 7](3)[4 12](5 0')(8 11)(9)(10)[13 3'](1' 2')")

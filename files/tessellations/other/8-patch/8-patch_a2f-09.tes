@@ -1,0 +1,8 @@
+## 8-patch + square, solution A2F-9
+h2.
+angleunit(2*pi/5)
+distunit(edge(4,5))
+unittile(1,2,1,2,1,2,2,1,2,1,2,1,2,2)
+unittile(1,1,1,1)
+unittile(1,1,1,1)
+conway("(0 0')(5 0'')(1)(4)(2 2')(3 2'')(6)(13)(7 3'')(12 1')(8 11)(9)(10)(3')(1'')")

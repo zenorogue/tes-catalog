@@ -1,0 +1,10 @@
+## Standard HyperRogue polyforms; fidget spinners + 2 stray hexagons, solution 11
+h2.
+distunit(arcmedge(6,6,7))
+let(a6 = regangle(1, 6))
+let(a7 = regangle(1, 7))
+unittile(a7,a7,a7,a7,a7,a6+a7,a6+a7,a7,a7,a7,a7,a7,a6+a7,a6+a7,a7,a7,a7,a7,a7,a6+a7,a6+a7)
+unittile(a6,a6,a6,a6,2*a6,2*a6,a6,a6,a6,a6,2*a6,2*a6,a6,a6,a6,a6,2*a6,2*a6)
+unittile(a6,a6,a6,a6,a6,a6)
+unittile(a6,a6,a6,a6,a6,a6)
+conway("(0 0')(1 17')(2 16')[3 4'][4 5'][5 6'][6 7'][7 8'](8 0'')(9 0''')[10 4'''](11 2''')(12 4'')(13 3'')(14 2'')[15 10'][16 11'][17 12'][18 14'](19 2')(20 1')[3' 15'][9' 1''](13')(5'' 1''')[3''' 5''']")

@@ -1,0 +1,7 @@
+## 8-patch + square, solution RF-64
+h2.
+angleunit(2*pi/5)
+distunit(edge(4,5))
+unittile(1,2,1,2,1,2,2,1,2,1,2,1,2,2)
+unittile(1,1,1,1)
+conway("(0 0')(7 0')[1 4][8 11](2)(9)[3 2'][10 2'](5 1')(12 1')(6)(13)(3')")
