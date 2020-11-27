@@ -13,6 +13,7 @@ struct tesdata {
   const char *label;
   const char *desc;
   int kind;
+  const char *link;
   };
 
 vector<tesdata> alldata = {
@@ -20,6 +21,10 @@ vector<tesdata> alldata = {
 #include "table-arcm.cpp"
 #include "table-upto5.cpp"
 };
+
+string imglink(string lnk) {
+  return "<img src=\"https://images2.imgbox.com/" + lnk + "_o.png\"/>";
+  }
 
 const int ANY = -2;
 int curreq = ANY;
@@ -153,10 +158,10 @@ void generate_page(string s) {
           for(int i=wlen; i<int(fname1.size()); i++) if(fname1[i] == '/') {
             auto& sa = samples[fname1.substr(0, i)];
             sa.first++;
-            if(rand() % sa.first == 0) sa.second = fname1;
+            if(rand() % sa.first == 0) sa.second = td1.link;
             goto next_td1;
             }
-          justhere.push_back(fname1);
+          justhere.push_back(td1.link);
           next_td1: ;
           }
         
@@ -168,7 +173,7 @@ void generate_page(string s) {
         images += "<table><tr>";
         for(auto j: justhere) {
           if(rand() % n < left) {
-            images += "<td>&nbsp;<img src=\"tessellations/" + j + ".png\"/>&nbsp;</td>";
+            images += "<td>&nbsp;" + imglink(j) + "&nbsp;</td>";
             left--;
             if(left == 5) images += "</tr><tr>";
             }
@@ -223,8 +228,8 @@ void generate_page(string s) {
         }
   
       char buf[9999];
-      snprintf(buf, 9999, "<table><tr><td><img src=\"tessellations/%s.png\"></td><td><b>%s</b> <a href='%s'>(play online)</a>",
-        fname.c_str(),
+      snprintf(buf, 9999, "<table><tr><td>%s</td><td><b>%s</b> <a href='%s'>(play online)</a>",
+        imglink(td.link).c_str(),
         label.c_str(),
         cline.c_str());
       out += buf;
