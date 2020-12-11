@@ -1150,9 +1150,9 @@ function updateGlobalBufferAndViews(buf) {
   Module['HEAPF64'] = HEAPF64 = new Float64Array(buf);
 }
 
-var STACK_BASE = 7957008,
+var STACK_BASE = 7957152,
     STACKTOP = STACK_BASE,
-    STACK_MAX = 2714128;
+    STACK_MAX = 2714272;
 
 assert(STACK_BASE % 16 === 0, 'stack must start aligned');
 
@@ -1666,8 +1666,8 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  2710040: function($0, $1, $2, $3) {var name = UTF8ToString($0, $1); var value = UTF8ToString($2, $3); document.getElementById(name).innerHTML = value;},  
- 2710165: function($0, $1) {var value = UTF8ToString($0, $1); window.history.pushState(value, document.title + ":"+value, "?c=" + value);}
+  2710184: function($0, $1, $2, $3) {var name = UTF8ToString($0, $1); var value = UTF8ToString($2, $3); document.getElementById(name).innerHTML = value;},  
+ 2710309: function($0, $1) {var value = UTF8ToString($0, $1); window.history.pushState(value, document.title + ":"+value, "?c=" + value);}
 };
 
 
