@@ -1,0 +1,13 @@
+## (6,6,6,3) x2, solution F4
+h2.
+let(ed = arcmedge(6,6,6,3))
+let(u3 = regangle(ed, 3))
+let(u6 = regangle(ed, 6))
+let(e3 = edge(2*pi/u3,3)/2)
+let(e6 = edge(2*pi/u6,6)/2)
+let(step = e6-e3)
+tile(ed/2,u6,ed,u6,ed/2,pi/2,step,-pi/2,ed/2,u3,ed,u3,ed/2,-pi/2,step,pi/2)
+tile(ed,u6,ed,u6,ed,u6,ed,u6,ed,u6,ed,u6)
+tile(ed/2,u3,ed/2,-pi/2,step,pi/2,ed/2,u6,ed,u6,ed,u6,ed,u6,ed/2,pi/2,step,-pi/2)
+tile(ed,u6,ed,u6,ed,u6,ed,u6,ed,u6,ed,u6)
+conway("(0 1'')(6 3'')(7 2'')(1 0')(1 1')(1 2')(1 3')(1 4')(1 5')(2 0'')(3 8'')(4 7'')(5 1''')(5 3''')(5 5''')(4'')(5'' 0''')(5'' 2''')(5'' 4''')(6'')")

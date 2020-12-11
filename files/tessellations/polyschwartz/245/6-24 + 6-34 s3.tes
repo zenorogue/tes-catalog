@@ -1,0 +1,9 @@
+## Triangle (2,4,5): 6-24 + 6-34, solution 3
+h2.
+angleunit(pi/20)
+let(e4=edge_angles(10,4,5))
+let(e8=edge_angles(5,4,10))
+let(e10=edge_angles(4,5,10))
+tile(e10,5,e4,8,e4,25,e10,10,e8,8,e8,20,e8,8,e8,30)
+tile(e8,10,e10,10,e10,20,e10,10,e10,20,e10,10,e10,10,e8,24)
+conway("(0 6')(1 2)(3 5')(4 0')(5 6)(7 7')(1' 4')[2'][3']")

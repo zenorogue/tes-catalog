@@ -1,0 +1,9 @@
+## (4,4,4,5)
+h2.
+distunit(arcmedge(4,4,4,5))
+let(u4 = -regangle(1, 4))
+let(u5 = -regangle(1, 5))
+unittile(u4,u4,u4,u4)
+unittile(u4,u4,u4,u4)
+unittile(u5,u5,u5,u5,u5)
+conway("(0 0'')(2 1'')(0 2'')(0 3'')(0 4'')(1 0')(3 1')(1 2')(3 3')")

@@ -1,0 +1,9 @@
+## (6,6,8) polyforms; 1-1 + 1-2 + 3-2, solution 4
+h2.
+distunit(arcmedge(6,6,8))
+let(a6 = regangle(1, 6))
+let(a8 = regangle(1, 8))
+unittile(a8,a8,a8,a8,a8,a8,a8,a8)
+unittile(a6,a6,a6,a6,a6,a6)
+unittile(a6,a6,a6,a6,2*a6,a6,a6+a8,a8,a8,a8,a8,a8,a8,a6+a8,a6,2*a6)
+conway("(0 0')(1 0')(2 0')(3 0')(4 0')(5 0')(6 0')(7 0')(1' 5')(2' 7'')(3' 6'')(4' 8'')[0'' 13''][1'' 14''](2'' 11'')(3'')(4'' 10'')(5'' 9'')[12'' 15'']")

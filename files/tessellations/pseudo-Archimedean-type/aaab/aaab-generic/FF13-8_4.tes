@@ -1,0 +1,12 @@
+## (a,a,a,b), FF13: 8,4
+h2.
+let(a = 8)
+let(b = 4)
+distunit(arcmedge(a,a,a,b))
+let(ua = regangle(1, a))
+let(ub = regangle(1, b))
+unittile(ua,ua,ua,ua,ua,ua,ua,ua)
+unittile(ub,ub,ub,ub)
+unittile(ua,ua,ua,ua,ua,ua,ua,ua)
+unittile(ua,ua,ua,ua,ua,ua,ua,ua)
+conway("(0 1')(1)(2)(3 0')(4 0'')(4 2'')(4 4'')(4 6'')(5 2')(6)(7)(3' 1''')(3' 3''')(3' 5''')(3' 7''')(1'' 0''')(3'' 2''')(5'' 4''')(7'' 6''')")

@@ -1,0 +1,9 @@
+## (6,6,6,7), solution 3
+h2.
+distunit(arcmedge(6,6,6,7))
+let(u6 = regangle(1, 6))
+let(u7 = regangle(1, 7))
+unittile(u7,u7,u7,u7,u7,u7,u7)
+unittile(u7,u7,u7,u7,u7,u7,u7)
+unittile(u6,u6,u6,u6,u6,u6)
+conway("(0 0'')(1 0'')(2 0'')(3 0'')(4 0'')(5 0'')(6 0'')(0' 4'')(1' 4'')(2' 4'')(3' 4'')(4' 4'')(5' 4'')(6' 4'')(1'')(2'' 5'')(3'')")

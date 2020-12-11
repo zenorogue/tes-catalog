@@ -1,0 +1,9 @@
+## Triangle (2,4,5): 6-5 + 6-12, solution 1
+h2.
+angleunit(pi/20)
+let(e4=edge_angles(10,4,5))
+let(e8=edge_angles(5,4,10))
+let(e10=edge_angles(4,5,10))
+tile(e8,4,e4,10,e4,20,e8,10,e10,10,e10,20,e10,10,e10,30)
+tile(e8,4,e4,15,e10,30,e8,8,e8,10,e10,15,e4,12,e8,20)
+conway("(0 3)(1 6')(2 1')(4 7)(5)(6)(0' 7')(2' 5')(3' 4')")

@@ -1,0 +1,7 @@
+## toimine237, 2-3
+h2.
+angleunit(pi/42)
+let(e6=edge_angles(14,6,21))
+let(e14=edge_angles(6,14,21))
+tile(e6,12,e6,21,e14,28,e14,21)
+conway("(0 1)(2 3)")

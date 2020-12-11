@@ -1,0 +1,10 @@
+## (7,7,7,6)x2, solution 1
+h2.
+distunit(arcmedge(7,7,7,6))
+let(u6 = regangle(1, 6))
+let(u7 = regangle(1, 7))
+unittile(u7,u7,u7,u7,u7,u7,u7)
+unittile(u6,u6,u6,u6,u6,u6)
+unittile(u7,u7,u7,u7,u7,u7,u7)
+unittile(u7,u7,u7,u7,u7,u7,u7)
+conway("(0 1')(0 4')(1)(2)(3 0')(3 3')(4 0''')(4 1''')(4 2''')(4 3''')(4 4''')(4 5''')(4 6''')(5 2')(5 5')(6 0'')(6 1'')(6 2'')(6 3'')(6 4'')(6 5'')(6 6'')")

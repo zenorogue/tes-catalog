@@ -1,0 +1,7 @@
+## (a,b,a,b), A: 3,6
+e2.
+let(ua = pi/3)
+let(ub = 2*pi/3)
+unittile(ua,ua,ua)
+unittile(ub,ub,ub,ub,ub,ub)
+conway("(0 0')(1 1')(2 2')(0 3')(1 4')(2 5')")

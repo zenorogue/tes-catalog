@@ -1,0 +1,5 @@
+## Euclidean, (6,6,6), solution S
+e2.
+angleunit(deg)
+unittile(120,120,120,120,120,120)
+conway("(0)(1)(2)(3)(4)(5)")

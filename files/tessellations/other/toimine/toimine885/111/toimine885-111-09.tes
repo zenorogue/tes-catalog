@@ -1,0 +1,9 @@
+## toimine885, 111, solution 9
+h2.
+angleunit(pi/20)
+let(e5=edge_angles(8,5,5))
+let(e8=edge_angles(5,5,8))
+tile(e8,8,e8,5,e5,5)
+tile(e8,8,e8,10,e8,8,e8,10)
+tile(e5,5,e8,16,e8,5,e5,10)
+conway("(0 1')(1 1'')[2](0' 3')(2' 2'')(0'')[3'']")
