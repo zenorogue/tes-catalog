@@ -198,7 +198,8 @@ void generate_page(string s) {
       if(td.type >= 0) 
         cline += "+-zoom+.95";
 
-      cline += "+-wsh+9+-palrgba+sub+00000020+-palrgba+normal+000000FF+-smart+1";
+      // cline += "+-wsh+9+-palrgba+sub+00000020+-palrgba+normal+000000FF+-smart+1";
+      cline += "+-smart+1";
       
       if(td.kind == 1) 
         cline += "+-canvas+B";
