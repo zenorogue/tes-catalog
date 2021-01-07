@@ -1,0 +1,10 @@
+## (a,a,b,b), AF-S1: 6,12
+h2.
+let(a = 6)
+let(b = 12)
+distunit(arcmedge(a,a,b,b))
+let(ua = regangle(1, a))
+let(ub = regangle(1, b))
+unittile(ua,ua,ua,ua,ua,ua)
+unittile(ub,ub,ub,ub,ub,ub,ub,ub,ub,ub,ub,ub)
+conway("(0 2')(0 8')(1)(2 0')(2 6')(3)(4 4')(4 10')(5)(1')(7')(3')(9')(5')(11')")

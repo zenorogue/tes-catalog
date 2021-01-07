@@ -1,5 +1,4 @@
-## triangle (2,3,7), {3,14} + {14,7}
-, solution FA5
+## triangle (2,3,7), {3,14} + {14,7}, solution FA5
 h2.
 angleunit(pi/42)
 let(e4=edge_angles(21,6,14))

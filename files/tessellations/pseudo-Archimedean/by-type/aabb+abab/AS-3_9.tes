@@ -1,0 +1,10 @@
+## (a,a,b,b)+(a,b,a,b): AS: 3,9
+h2.
+let(a = 3)
+let(b = 9)
+distunit(arcmedge(a,a,b,b))
+let(ua = regangle(1, a))
+let(ub = regangle(1, b))
+unittile(ua,ua,ua)
+unittile(ub,ub,ub,ub,ub,ub,ub,ub,ub)
+conway("(0 2')(0 5')(0 8')(1)(2 0')(2 3')(2 6')(1')(4')(7')")

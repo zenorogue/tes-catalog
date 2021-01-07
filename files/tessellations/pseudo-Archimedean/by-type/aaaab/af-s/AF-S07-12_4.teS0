@@ -1,0 +1,13 @@
+## (a,a,a,a,b), AF-S7: 12,4
+h2.
+let(a = 12)
+let(b = 4)
+distunit(arcmedge(a,a,a,a,b))
+let(ua = regangle(1, a))
+let(ub = regangle(1, b))
+unittile(ua,ua,ua,ua,ua,ua,ua,ua,ua,ua,ua,ua)
+unittile(ua,ua,ua,ua,ua,ua,ua,ua,ua,ua,ua,ua)
+unittile(ub,ub,ub,ub)
+unittile(ua,ua,ua,ua,ua,ua,ua,ua,ua,ua,ua,ua)
+unittile(ub,ub,ub,ub)
+conway("(0 0'')(4 1'')(8 2'')(0 3'')(1 0')(5 6')(9 0')(2 0@4)(6 0@4)(10 2@4)(3 2')(7 8')(11 2')(1')(7')(3')(9')(4' 1''')(10' 3''')(4' 5''')(10' 7''')(4' 9''')(10' 11''')(5')(11')(0''' 1@4)(2''' 3@4)(4''' 1@4)(6''' 3@4)(8''' 1@4)(10''' 3@4)")

@@ -1,0 +1,13 @@
+## AAAB, generic; S1-F5, (22,22,22,110)
+h2.
+let(a1 = 22)
+let(a2 = 110)
+let(ed = arcmedge(a1,a1,a1,a2))
+let(u1 = regangle(ed, a1))
+let(u2 = regangle(ed, a2))
+let(e1 = edge(2*pi/u1,a1)/2)
+let(e2 = edge(2*pi/u2,a2)/2)
+let(step = e2-e1)
+tile(ed/2,u1,ed,u1,ed,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed,u2,ed/2,pi/2,step,-pi/2,ed/2,u1,ed,u1,ed,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed,u2,ed/2,pi/2,step,-pi/2,ed/2,u1,ed,u1,ed,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed,u2,ed/2,pi/2,step,-pi/2,ed/2,u1,ed,u1,ed,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed,u2,ed/2,pi/2,step,-pi/2,ed/2,u1,ed,u1,ed,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed,u2,ed/2,pi/2,step,-pi/2)
+tile(ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1,ed,u1)
+conway("(0 8)(9)(1)(2 0')(2 10')(2 20')(3)(4 6)(5)(7 1')(7 11')(7 21')(10 18)(19)(11)(12 2')(12 12')(13)(14 16)(15)(17 3')(17 13')(20 28)(29)(21)(22 4')(22 14')(23)(24 26)(25)(27 5')(27 15')(30 38)(39)(31)(32 6')(32 16')(33)(34 36)(35)(37 7')(37 17')(40 48)(49)(41)(42 8')(42 18')(43)(44 46)(45)(47 9')(47 19')")

@@ -1,0 +1,12 @@
+## AAAB, generic; S1-F4, (15,15,15,20)
+h2.
+let(a1 = 15)
+let(a2 = 20)
+let(ed = arcmedge(a1,a1,a1,a2))
+let(u1 = regangle(ed, a1))
+let(u2 = regangle(ed, a2))
+let(e1 = edge(2*pi/u1,a1)/2)
+let(e2 = edge(2*pi/u2,a2)/2)
+let(step = e2-e1)
+tile(ed/2,u1,ed,u1,ed,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed/2,pi/2,step,-pi/2,ed/2,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed/2,pi/2,step,-pi/2,ed/2,u1,ed,u1,ed,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed/2,pi/2,step,-pi/2,ed/2,u1,ed,u1,ed/2,-pi/2,step,pi/2,ed/2,u2,ed/2,pi/2,step,-pi/2)
+conway("(0 14)(15)(1)(2 10)(3)(4 6)(5)(7 9)(8)(11 13)(12)(16 30)(31)(17)(18 26)(19)(20 22)(21)(23 25)(24)(27 29)(28)")

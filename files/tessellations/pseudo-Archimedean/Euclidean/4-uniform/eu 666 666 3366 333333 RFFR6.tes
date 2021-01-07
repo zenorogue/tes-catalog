@@ -1,0 +1,6 @@
+## Euclidean, (6,6,6)x2+(3,3,6,6)+(3,3,3,3,3,3), solution RFFR6
+e2.
+angleunit(deg)
+unittile(120,120,120,120,120,120)
+unittile(60,60,60)
+conway("(0 1)(2)(3 5)(4 0')(1' 2')")
