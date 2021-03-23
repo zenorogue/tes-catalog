@@ -1,0 +1,5 @@
+## {4,12}
+h2.
+distunit(edge(4,12))
+unittile(pi/6,pi/6,pi/6,pi/6)
+conway("(0)(1)(2)(3)")

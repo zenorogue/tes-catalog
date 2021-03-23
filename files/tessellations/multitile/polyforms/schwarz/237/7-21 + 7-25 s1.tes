@@ -1,0 +1,9 @@
+## toimine237, 7-21 + 7-25, solution 1
+h2.
+angleunit(pi/42)
+let(e4=edge_angles(21,6,14))
+let(e6=edge_angles(14,6,21))
+let(e14=edge_angles(6,14,21))
+tile(e4,6,e6,42,e6,24,e6,21,e14,28,e14,63,e6,12,e6,21,e14,70)
+tile(e4,6,e6,42,e6,24,e6,63,e14,14,e4,12,e4,42,e14,42,e14,42)
+conway("[0 5'](1 2)(3 6)(4 5)[7 3'][8 4'](0' 6')(1' 2')(7' 8')")

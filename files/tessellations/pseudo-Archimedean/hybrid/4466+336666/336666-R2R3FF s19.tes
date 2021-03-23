@@ -1,0 +1,12 @@
+## (3,3,6,6,6,6) class hybrid, R2 + R3 + F + F, solution 19
+h2.
+distunit(arcmedge(4,4,6,6))
+let(u3 = regangle(2, 3))
+let(u4 = regangle(1, 4))
+let(u6a = regangle(1, 6))
+let(u6b = regangle(2, 6))
+unittile(u4,u4,u4,u4)
+unittile(u6a,u6a,u6a,u6a,u6a,u6a)
+unittile(u3,pi,u3,pi,u3,pi)
+unittile(u6b,pi,u6b,pi,u6b,pi,u6b,pi,u6b,pi,u6b,pi)
+conway("(0 0')(2 2')(0 4')(1 0''')(3 0''')(1' 11''')(3' 11''')(5' 11''')(0'' 1''')(1'' 10''')(2'' 9''')(3'' 6''')(4'' 5''')(5'' 2''')(3''' 7''')(4''' 8''')")

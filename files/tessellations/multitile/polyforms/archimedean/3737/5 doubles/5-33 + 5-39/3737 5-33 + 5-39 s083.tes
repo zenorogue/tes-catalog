@@ -1,0 +1,8 @@
+## 3737 polyforms, 5-33 + 5-39, s83
+h2.
+distunit(arcmedge(3,7,3,7))
+let(a3 = regangle(1, 3))
+let(a7 = regangle(1, 7))
+unittile(a3,a3+a7,a7,a3+a7,a3+a7,a7,a7,a7,a7,a7,a3+2*a7,a3+a7,a3,a3+a7,a3+a7)
+unittile(a3,a3+a7,a7,a3+a7,a3,a3+a7,a3+a7,a3,2*a3+a7,a3,2*a3+a7)
+conway("[0 2][1 14](3 13)(4 2')(5 1')[6 10'][7 0'](8 9')(9 8')(10 5')(11 4')(12 3')(6' 7')")

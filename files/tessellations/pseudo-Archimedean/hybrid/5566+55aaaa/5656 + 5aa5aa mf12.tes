@@ -1,0 +1,14 @@
+## (5,6,5,6) + (5,10,10,5,10,10), solution MF12
+h2.
+distunit(arcmedge(5,5,6,6))
+let(u5s = regangle(1, 5))
+let(u6 = regangle(1, 6))
+let(u5l = regangle(2, 5))
+let(u10 = regangle(2, 10))
+unittile(u6,u6,u6,u6,u6,u6)
+unittile(u5s,u5s,u5s,u5s,u5s)
+unittile(u5s,u5s,u5s,u5s,u5s)
+unittile(u10,pi,u10,pi,u10,pi,u10,pi,u10,pi,u10,pi,u10,pi,u10,pi,u10,pi,u10,pi)
+unittile(u5l,pi,u5l,pi,u5l,pi,u5l,pi,u5l,pi)
+conway("(0 0')(0 1')(0 2')(0 3')(0 4')(1 0'')[2 4''](3 3'')(4 1''')(4 5''')(4 9''')(4 13''')(4 17''')(5 1'')(2'' 2''')(2'' 6''')(2'' 10''')(2'' 14''')(2'' 18''')(0''' 1@4)(4''' 3@4)(8''' 5@4)(12''' 7@4)(16''' 9@4)(3''' 0@4)(7''' 2@4)(11''' 4@4)(15''' 6@4)(19''' 8@4)")
+

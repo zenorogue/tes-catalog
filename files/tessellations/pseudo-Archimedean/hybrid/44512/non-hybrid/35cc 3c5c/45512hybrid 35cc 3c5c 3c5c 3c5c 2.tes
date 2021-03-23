@@ -1,0 +1,12 @@
+## 45512 hybrid, (3,5,12,12)+(3,12,5,12)x3, solution 2
+h2.
+distunit(arcmedge(4,5,5,12))
+let(u3 = regangle(1, 3))
+let(u5 = regangle(1, 5))
+let(u12 = regangle(1, 12))
+unittile(u12,u12,u12,u12,u12,u12,u12,u12,u12,u12,u12,u12)
+unittile(u5,u5,u5,u5,u5)
+unittile(u3,u3,u3)
+unittile(u5,u5,u5,u5,u5)
+unittile(u3,u3,u3)
+conway("(0 1'')(1)(2 0')(3 1@4)(4 3')(5 2@4)(6 4')(7 0@4)(8 2')(9)(10 2'')(11 0''')(11 1''')(11 2''')(11 3''')(11 4''')(1' 0'')")
