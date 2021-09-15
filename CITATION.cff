@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this website in your research, please cite it as below."
+authors:
+- family-names: "Ètrnáct"
+  given-names: "Marek"
+- family-names: "Kopczyñski"
+  given-names: "Eryk"
+  orcid: "https://orcid.org/0000-0001-5588-1181"
+title: "Tessellation Catalog"
+version: 2021-05-30
+date-released: 2020-03-21
+url: "https://github.com/zenorogue/tes-catalog/"
