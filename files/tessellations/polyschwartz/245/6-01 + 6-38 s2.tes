@@ -1,9 +1,0 @@
-## Triangle (2,4,5): 6-1 + 6-38, solution 2
-h2.
-angleunit(pi/20)
-let(e4=edge_angles(10,4,5))
-let(e8=edge_angles(5,4,10))
-let(e10=edge_angles(4,5,10))
-tile(e8,4,e4,10,e4,12,e8,20,e8,8,e8,10,e10,20,e10,30)
-tile(e10,10,e8,12,e4,10,e4,12,e8,10,e10,20)
-conway("(0 4')[1 2'][2 3'](3 1')(4 5)(6 0')(7 5')")

@@ -1,9 +1,0 @@
-## Triangle (2,4,5): 5-12 + 5-14, solution 14
-h2.
-angleunit(pi/20)
-let(e4=edge_angles(10,4,5))
-let(e8=edge_angles(5,4,10))
-let(e10=edge_angles(4,5,10))
-tile(e10,5,e4,20,e8,10,e10,10,e10,20,e10,10,e10,20)
-tile(e4,8,e4,10,e4,12,e8,10,e10,15)
-conway("[0 4'][1 0'][2 3'](3 6)[4 5](1' 2')")

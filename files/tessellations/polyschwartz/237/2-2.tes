@@ -1,7 +1,0 @@
-## toimine237, 2-2
-h2.
-angleunit(pi/42)
-let(e4=edge_angles(21,6,14))
-let(e14=edge_angles(6,14,21))
-tile(e4,12,e4,14,e14,42,e14,14)
-conway("(0 1)(2 3)")
