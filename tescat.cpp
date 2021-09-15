@@ -118,6 +118,7 @@ void generate_page(string s) {
     
     out +=
       "<li> Join the <a href=\"https://discord.gg/SnuhaW8\">#tessellation channel on the HyperRogue discord</a> for discussions!<br/>"
+      "<li> See <a href=\"https://github.com/zenorogue/tes-catalog\">here</a> for raw tessellation files, the source code of this website, and citation info!<br/>"
       "</ul><br/><br/>";
     }
 
