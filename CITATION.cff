@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this website in your research, please cite it as below."
 authors:
-- family-names: "Ètrnáct"
+- family-names: "ÄŒtrnÃ¡ct"
   given-names: "Marek"
-- family-names: "Kopczyñski"
+- family-names: "KopczyÅ„ski"
   given-names: "Eryk"
   orcid: "https://orcid.org/0000-0001-5588-1181"
 title: "Tessellation Catalog"
