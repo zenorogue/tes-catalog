@@ -1,0 +1,6 @@
+## Euclidean, (4,4,4,4)S4, solution 1
+e2.
+angleunit(deg)
+unittile(90,90,90,90)
+conway("(0)")
+repeat(0,4)

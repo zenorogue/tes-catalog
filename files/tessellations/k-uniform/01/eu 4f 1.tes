@@ -1,0 +1,8 @@
+## Euclidean, (3,6,3,6)S, solution 1
+e2.
+angleunit(deg)
+unittile(120,120,120,120,120,120)
+unittile(60,60,60)
+conway("(0 0')")
+repeat(0,6)
+repeat(1,3)

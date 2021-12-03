@@ -1,0 +1,8 @@
+## Euclidean, (3,3,3,4,4)A, (3,3,3,3,3,3)S2
+e2.
+angleunit(deg)
+unittile(90,90,90,90)
+unittile(60,60,60)
+unittile(60,60,60)
+conway("(0 0')(1)(1' 0'')(2' 1'')(2'')")
+repeat(0,2)

@@ -1,0 +1,8 @@
+## Euclidean, (3,12,12)A, solution 1
+e2.
+angleunit(deg)
+unittile(150,150,150,150,150,150,150,150,150,150,150,150)
+unittile(60,60,60)
+conway("(0 0')(1)")
+repeat(0,6)
+repeat(1,3)

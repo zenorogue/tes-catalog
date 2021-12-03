@@ -1,0 +1,10 @@
+## Euclidean, (4,6,12), solution 1
+e2.
+angleunit(deg)
+unittile(150,150,150,150,150,150,150,150,150,150,150,150)
+unittile(120,120,120,120,120,120)
+unittile(90,90,90,90)
+conway("(0 1'')(1 0')(1' 0'')")
+repeat(0,6)
+repeat(1,3)
+repeat(2,2)
