@@ -1,0 +1,15 @@
+## {3,9} hybrid, (3,3,3,9,9,9)F, (3,3,3,3,3,3,3,9)F
+h2.
+distunit(edge(3,9))
+let(u3 = regangle(1, 3))
+let(u9 = regangle(1, 9))
+unittile(u9,u9,u9,u9,u9,u9,u9,u9,u9)
+unittile(u9,u9,u9,u9,u9,u9,u9,u9,u9)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+conway("(0 1@4)(1 0')(2 0'')(1'' 0''')(2'' 0@5)(1''' 0@4)[2''' 2@4]")
+repeat(0,3)
+repeat(1,9)
+repeat(5,3)

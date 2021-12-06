@@ -1,0 +1,8 @@
+## (4,4,6,6) twobrid, ([3],[6l])x2+([6l],6l,3,6l)x2, solution S4
+h2.
+distunit(arcmedge(4,4,6,6))
+let(u3 = regangle(2,3))
+let(u6l = regangle(2,6))
+unittile(pi,u6l,pi,u6l,pi,u6l,pi,u6l,pi,u6l,pi,u6l)
+unittile(pi,u3,pi,u3,pi,u3)
+conway("(0 1')(1 0')(2)(3 7)(4 3')(5 2')(6 10)(8 5')(9 4')(11)")

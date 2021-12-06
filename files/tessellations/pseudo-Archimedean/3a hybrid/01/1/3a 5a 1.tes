@@ -1,0 +1,7 @@
+## {3,10} hybrid, (10,10,10,10,10)S
+h2.
+distunit(edge(3,10))
+let(u10 = 2*pi/5)
+unittile(u10,u10,u10,u10,u10,u10,u10,u10,u10,u10)
+conway("(0)")
+repeat(0,10)

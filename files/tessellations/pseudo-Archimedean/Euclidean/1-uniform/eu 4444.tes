@@ -1,5 +1,0 @@
-## Euclidean, (4,4,4,4)
-e2.
-angleunit(deg)
-unittile(90,90,90,90)
-conway("(0)(1)(2)(3)")

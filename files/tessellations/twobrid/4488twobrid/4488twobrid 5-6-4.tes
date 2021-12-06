@@ -1,0 +1,16 @@
+## (4,4,8,8) twobrid, (4s,8s,[8l])+(4s,8s,8l,4l,8l)+([4l],[8l])x2+([8l],8l,4l,8l), solution 4
+h2.
+distunit(arcmedge(4,4,8,8))
+let(u4s = regangle(1,4))
+let(u8s = regangle(1,8))
+let(u4l = regangle(2,4))
+let(u8l = regangle(2,8))
+unittile(pi,u8l,pi,u8l,pi,u8l,pi,u8l,pi,u8l,pi,u8l,pi,u8l,pi,u8l)
+unittile(u8s,u8s,u8s,u8s,u8s,u8s,u8s,u8s)
+unittile(u4s,u4s,u4s,u4s)
+unittile(u4l,pi,u4l,pi,u4l,pi,u4l,pi)
+conway("(0 1'')(1 0')(2 0''')(3 3''')[4 5](6 2''')(7 1''')(1' 0'')")
+repeat(0,2)
+repeat(1,4)
+repeat(2,2)
+repeat(3,2)

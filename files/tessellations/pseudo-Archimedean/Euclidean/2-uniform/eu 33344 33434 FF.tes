@@ -1,7 +1,0 @@
-## Euclidean, (3,3,3,4,4)+(3,3,4,3,4), solution FF
-e2.
-angleunit(deg)
-unittile(90,90,90,90)
-unittile(60,60,60)
-unittile(60,60,60)
-conway("(0 1'')(1)(2 0')[3 2''](1')(2' 0'')")

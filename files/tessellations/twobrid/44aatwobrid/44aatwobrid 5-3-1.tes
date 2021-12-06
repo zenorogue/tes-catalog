@@ -1,0 +1,17 @@
+## (4,4,10,10) twobrid, (4,10s,4,10s)+(4,10s,[5l])+(4,10s,[10l])+(4,5l,10s,10l,10l)+([10l],[10l]), solution 1
+h2.
+distunit(arcmedge(4,4,10,10))
+let(u4 = regangle(1,4))
+let(u10s = regangle(1,10))
+let(u5l = regangle(2,5))
+let(u10l = regangle(2,10))
+unittile(u10s,u10s,u10s,u10s,u10s,u10s,u10s,u10s,u10s,u10s)
+unittile(u4,u4,u4,u4)
+unittile(u4,u4,u4,u4)
+unittile(pi,u5l,pi,u5l,pi,u5l,pi,u5l,pi,u5l)
+unittile(pi,u10l,pi,u10l,pi,u10l,pi,u10l,pi,u10l,pi,u10l,pi,u10l,pi,u10l,pi,u10l,pi,u10l)
+conway("(0 0'')(1 0')(2 0''')(3 1@4)(4 1')(2' 0@4)(3' 1''')(2@4 3@4)")
+repeat(0,2)
+repeat(2,4)
+repeat(3,5)
+repeat(4,5)

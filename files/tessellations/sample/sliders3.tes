@@ -1,0 +1,18 @@
+## 60-degree rectangle
+##
+## You can change x using 'tessellation sliders' in the geometry experiments menu.
+##
+h2.
+angleunit(deg)
+
+slider(x,0,-2,2)
+
+let(c = 20)
+
+let(ea=2*find_angle(c, x))
+let(eb=2*find_angle(c, -x))
+
+tile(ea, c, eb, c, ea, c, eb, c)
+conway("[0][1][2][3]")
+
+cscale(.75)

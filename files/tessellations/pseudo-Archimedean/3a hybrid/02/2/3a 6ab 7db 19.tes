@@ -1,0 +1,15 @@
+## {3,10} hybrid, (3,3,10,10,10,10)F, (3,3,10,3,10,3,10)F
+h2.
+distunit(edge(3,10))
+let(u3 = pi/5)
+let(u10 = 2*pi/5)
+unittile(u10,u10,u10,u10,u10,u10,u10,u10,u10,u10)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u10,u10,u10,u10,u10,u10,u10,u10,u10,u10)
+unittile(u10,u10,u10,u10,u10,u10,u10,u10,u10,u10)
+conway("(0 1''')(1 6)(2 0@4)(3 1'')(4)(5)(7)(8)(9 0')(1' 0''')(2' 1@5)(0'' 1@4)(2'' 1@6)(2''' 0@6)(2@4 0@5)")
+repeat(5,5)
+repeat(6,5)

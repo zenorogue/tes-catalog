@@ -1,0 +1,16 @@
+## (4,4,6,6) twobrid, (4,6s,4,6s)x2+(4,6s,[3])+(4,6s,[6l])+(4,3,6s,6l,6l)+([6l],[6l]), solution 1
+h2.
+distunit(arcmedge(4,4,6,6))
+let(u4 = regangle(1,4))
+let(u6s = regangle(1,6))
+let(u3 = regangle(2,3))
+let(u6l = regangle(2,6))
+unittile(u6s,u6s,u6s,u6s,u6s,u6s)
+unittile(u4,u4,u4,u4)
+unittile(u4,u4,u4,u4)
+unittile(pi,u3,pi,u3,pi,u3)
+unittile(pi,u6l,pi,u6l,pi,u6l,pi,u6l,pi,u6l,pi,u6l)
+conway("(0 1')(1 0')(2 0'')(3 0@4)(4 1''')(5 1'')(2'' 0''')(3'' 1@4)(2@4 3@4)")
+repeat(1,2)
+repeat(3,3)
+repeat(4,3)

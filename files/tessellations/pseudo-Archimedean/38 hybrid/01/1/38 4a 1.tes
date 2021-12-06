@@ -1,0 +1,7 @@
+## {3,8} hybrid, (8,8,8,8)S4
+h2.
+distunit(edge(3,8))
+let(u8 = regangle(1, 8))
+unittile(u8,u8,u8,u8,u8,u8,u8,u8)
+conway("(0)")
+repeat(0,8)

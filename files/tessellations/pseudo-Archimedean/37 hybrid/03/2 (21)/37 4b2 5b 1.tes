@@ -1,0 +1,14 @@
+## {3,7}, (3,7,7,7)Fx2, (3,3,3,7,7)F
+h2.
+distunit(edge(3,7))
+let(u3 = regangle(1, 3))
+let(u7 = regangle(1, 7))
+unittile(u7,u7,u7,u7,u7,u7,u7)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u3,u3,u3)
+unittile(u7,u7,u7,u7,u7,u7,u7)
+conway("(0 0')(1 5)(2 0'')(3 0@4)(4 2'')(6)(1'' 0''')")
+repeat(1,3)
+repeat(3,3)
+repeat(4,7)

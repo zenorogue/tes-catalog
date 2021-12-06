@@ -1,0 +1,10 @@
+## (4,4,6,6) twobrid, ([3],[6l])+([6l],6l,3,6l)
+h2.
+distunit(arcmedge(4,4,6,6))
+let(u3 = regangle(2,3))
+let(u6l = regangle(2,6))
+unittile(pi,u6l,pi,u6l,pi,u6l,pi,u6l,pi,u6l,pi,u6l)
+unittile(pi,u3,pi,u3,pi,u3)
+conway("(0 1')(1 0')(2)(3)")
+repeat(0,3)
+repeat(1,3)

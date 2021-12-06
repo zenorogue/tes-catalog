@@ -1,0 +1,6 @@
+## {3,13} pentiamond 
+## from Marek14's post in HyperRogue discord
+h2.
+angleunit(2*pi/13)
+distunit(edge(4,13))
+unittile(1,1,1,1)
