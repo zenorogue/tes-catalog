@@ -1703,8 +1703,8 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  16802220: function($0, $1, $2, $3) {var name = UTF8ToString($0, $1); var value = UTF8ToString($2, $3); document.getElementById(name).innerHTML = value;},  
- 16802340: function($0, $1) {var value = UTF8ToString($0, $1); window.history.pushState(value, document.title + ":"+value, "?c=" + value);}
+  17413612: function($0, $1, $2, $3) {var name = UTF8ToString($0, $1); var value = UTF8ToString($2, $3); document.getElementById(name).innerHTML = value;},  
+ 17413732: function($0, $1) {var value = UTF8ToString($0, $1); window.history.pushState(value, document.title + ":"+value, "?c=" + value);}
 };
 
 
