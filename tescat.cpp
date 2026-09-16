@@ -22,8 +22,9 @@ tesdata alldata[] = {
 #include "table-upto5.cpp"
 };
 
-string imglink(string lnk) {
-  return "<img src=\"https://images2.imgbox.com/" + lnk + "_o.png\"/>";
+string imglink(tesdata *t) {
+  string link = t->link;
+  return "<img src=\"https://images2.imgbox.com/" + link + "_o.png\"/>";
   }
 
 const int ANY = -2;
@@ -178,28 +179,41 @@ void generate_page(string s) {
       string where = fname.substr(0, i+1);
       if(true) {
         int wlen = where.size();
-        map<string, pair<int, string> > samples;
-        vector<string> justhere;
+        vector<tesdata*> justhere;
         int cnt = 0;
         
+        map<string, vector<tesdata*>> per_group;
+
         while(ti < (int) matching.size()) {
           auto& td1 = *matching[ti];
           if(!at(td1.fname, where)) break;
           cnt++;
           const string& fname1 = td1.fname;
           for(int i=wlen; i<int(fname1.size()); i++) if(fname1[i] == '/') {
-            auto& sa = samples[fname1.substr(wlen, i-wlen)];
-            sa.first++;
-            if(rand() % sa.first == 0) sa.second = td1.link;
+            per_group[fname1.substr(wlen, i-wlen)].push_back(&td1);
             goto next_td1;
             }
-          justhere.push_back(td1.link);
+          justhere.push_back(&td1);
           next_td1: ti++;
           }
         ti--;
         
-        for(auto sa: samples) justhere.push_back(sa.second.second);
-        
+        vector<vector<tesdata*>> groups;
+        for(auto& pp: per_group) groups.push_back(std::move(pp.second));
+        sort(groups.begin(), groups.end(), [] (auto a, auto b) { return a.size() > b.size(); });
+
+        auto pick_one = [&] (vector<tesdata*>& g) {
+          swap(g[rand() % g.size()], g.back());
+          auto ret = g.back();
+          g.pop_back();
+          return ret;
+          };
+
+        for(auto& p: groups) justhere.push_back(pick_one(p));
+
+        for(int it=0; it<10; it++) for(auto& p: groups) if(p.size() && justhere.size() < 10)
+          justhere.push_back(pick_one(p));
+
         string images = "";
         int left = 10;
         int n = justhere.size();
@@ -215,7 +229,7 @@ void generate_page(string s) {
         images += "</tr></table>";
 
         out += "<h2>" + genlink(prefix+/*advsearch_str+*/where, where) + " (" + std::to_string(cnt) + " tessellations)</h2>";
-        out += genlink(prefix+where, images);
+        out += images;
         out += "<br/><br/>";
         }
       goto next_td;
@@ -262,7 +276,7 @@ void generate_page(string s) {
   
       char buf[9999];
       snprintf(buf, 9999, "<table><tr><td>%s</td><td><b>%s</b> <a href='%s'>(play online)</a>",
-        imglink(td.link).c_str(),
+        imglink(&td).c_str(),
         label.c_str(),
         cline.c_str());
       out += buf;
