@@ -220,7 +220,9 @@ void generate_page(string s) {
         images += "<table><tr>";
         for(auto j: justhere) {
           if(rand() % n < left) {
-            images += "<td>&nbsp;" + imglink(j) + "&nbsp;</td>";
+            string cu = j->fname;
+            int lastslash = 0; for(int u=0; u<int(cu.size()); u++) if(cu[u] == '/') lastslash = u+1;
+            images += "<td>" + genlink(cu.substr(0, lastslash), imglink(j)) + "</td>";
             left--;
             if(left == 5) images += "</tr><tr>";
             }
