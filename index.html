@@ -193,6 +193,20 @@ function mayload(name)
       function jump(s) { Module.ccall('doit', 'null', ['string'], [s]); }
       function render(s) { Module.ccall('render', 'null', ['string'], [s]); }
 
+      function options(s) { Module.ccall('options', 'null', ['string'], [s]); }
+      function activate() {
+        width = document.getElementById('width').value;
+        sx = document.getElementById('shotx').value;
+        sy = document.getElementById('shoty').value;
+        detail = document.getElementById('detail').value;
+        pattern = document.getElementById('pattern').value;
+        ph = document.getElementById('ph').value;
+        pe = document.getElementById('pe').value;
+        ps = document.getElementById('ps').value;
+
+        Module.ccall('activ', 'null', ['double', 'int', 'int', 'double', 'string', 'string', 'string', 'string'], [width, sx, sy, detail, pattern, ph, pe, ps]);
+        }
+
       window.onpopstate = function(event) { jump(event.state) }
 
       function run_main() { 

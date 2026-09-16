@@ -419,8 +419,11 @@ void generate_page(string s) {
   out += "Advanced search: <input id=\"search\" type=\"text\"><button onClick=\"do_advanced_search('" + prefix + "', '" + s + "')\">Search!</button><br/><br/>";
     
   out += "Number of tessellations here: " + std::to_string(matching.size()) + "<br/><br/>";    
+
+  out += "<a href=\"javascript:options('" + s + "');\">change graphical settings</a><br/><br/>";
           
   string last_explored = "?";
+
   
   for(int ti=0; ti<(int) matching.size(); ti++) {
     auto& td = *matching[ti];
@@ -627,6 +630,18 @@ extern "C" {
 
   void render(const char *s) {
     delayed_render(s);
+    }
+
+  void options(const char *s) {
+    view_option_screen(s);
+    }
+
+  void activ(double w, int sx, int sy, double det, const char *pat, const char *ph, const char *pe, const char *ps) {
+    hr::global_boundary_ratio = w;
+    hr::shot::shotx = sx;
+    hr::shot::shoty = sy;
+    hr::vid.smart_range_detail = det;
+    pattern = pat; projh = ph; proje = pe; projs = ps;
     }
 
   }
