@@ -116,6 +116,8 @@ function mayload(name)
 {
           q = getQueryVariable(name);
           if(q && q != "") {
+            q = q.replace(/%2B/g, "+");
+            q = q.replace(/%20/g, " ");
             q = q.replace(/%2F/g, "/");
             return q;
             }
