@@ -494,53 +494,20 @@ void generate_page(string s) {
       }
     
     if(1) {
-      string cline = 
-        "view.html?c=-viz";
       
-      cline += "+-back+ffffff+-fore+0+-borders+ffffff+-fillmodel+ff";
-      
-      if(td.type >= 0) 
-        cline += "+-zoom+.95";
+      out += "<table><tr><td>";
+      out += imglink(&td);
 
-      // cline += "+-wsh+9+-palrgba+sub+00000020+-palrgba+normal+000000FF+-smart+1";
-      cline += "+-smart+1";
-      
-      if(td.kind == 1) 
-        cline += "+-canvas+B";
-      else
-        cline += "+-canvas+A";
-        
-      if(td.kind == 0) {      
-        cline += "+-arbi+1&1=tessellations%2F";
-        for(char ch:fname)
-          if(ch == '+') cline += "%2B";
-          else if(ch == '/') cline += "%2F";
-          else cline += ch;
-        cline += ".tes";
-        }
-      else {
-        cline += "+-7+-symbol+\"";
-        string lab = td.label;
-        for(char c: lab)
-          if(c == '(') cline += "%28";
-          else if(c == ')') cline += "%29";
-          else if(c == '[') cline += "%5B";
-          else if(c == ']') cline += "%5D";
-          else if(c == ',') cline += "%2C";
-          else if(c == ' ') cline += "%2C";
-          else cline += c;
-        cline += "\"";
-        }
-  
       char buf[9999];
-      snprintf(buf, 9999, "<table><tr><td>%s</td><td><b>%s</b> <a href='%s'>(play online)</a>",
-        imglink(&td).c_str(),
+
+      snprintf(buf, 9999, "</td><td><b>%s</b> &mdash; <a href=\"javascript:playit('%s','%s')\">play it</a>",
         label.c_str(),
-        cline.c_str());
+        s.c_str(), td.link);
+
       out += buf;
-      
+
       if(td.kind == 0) {
-        snprintf(buf, 9999, "<a href=\"%s\">(download)</a>",("files/tessellations/" + fname + ".tes").c_str());
+        snprintf(buf, 9999, " &mdash; <a href=\"%s\">download</a>",("files/tessellations/" + fname + ".tes").c_str());
         out += buf;
         }
       else out += " (Archimedean)";
@@ -644,5 +611,18 @@ extern "C" {
     pattern = pat; projh = ph; proje = pe; projs = ps;
     }
 
+  void playit(const char *s, const char *t) {
+    play_tessellation(s, t);
+    }
+
+  void close_gfx() {
+    hr::println(*hr::hlog_ptr, "close_gfx called");
+    emscripten_cancel_main_loop();
+    EM_ASM_({
+      canvas = document.getElementById("canvas");
+      canvas.style.display = "none";
+      });
+    hr::svg::svg_mode = 1;
+    }
   }
 

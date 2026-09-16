@@ -93,6 +93,7 @@
       <progress value="0" max="100" id="progress" hidden=1></progress>
     </div>
 
+    <canvas class='emscripten' id='canvas' oncontextmenu='event.preventDefault()' tabindex=-1 style='display:none;'></canvas>
     
     <div id="output"></div>
 
@@ -208,6 +209,9 @@ function mayload(name)
 
         Module.ccall('activ', 'null', ['double', 'int', 'int', 'double', 'string', 'string', 'string', 'string'], [width, sx, sy, detail, pattern, ph, pe, ps]);
         }
+
+      function playit(s,t) { Module.ccall('playit', 'null', ['string', 'string'], [s, t]); }
+      function close_gfx() { Module.ccall('close_gfx', 'null', [], []); }
 
       window.onpopstate = function(event) { jump(event.state) }
 
