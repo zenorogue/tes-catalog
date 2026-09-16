@@ -4,6 +4,21 @@
 #include <string>
 #include <time.h>
 #include <cctype>
+#include <emscripten/fetch.h>
+
+#define CAP_INV 0
+#define CAP_URL 1
+#define ISWEB 1
+#define GLES_ONLY
+// #define MAXMDIM 3
+#define CAP_GD 0
+#define CAP_COMPLEX2 0
+#define CAP_LEGACY 0
+#define NOMAIN
+#define HYPERWEB_ONLY_FUNCTIONS
+
+#include "hr/hyper.cpp"
+#include "hr/hyperweb.cpp"
 
 using namespace std;
 
@@ -20,12 +35,84 @@ tesdata alldata[] = {
 #include "table.cpp"
 #include "table-arcm.cpp"
 #include "table-upto5.cpp"
+/*
+{-1, "pseudo-Archimedean/by-tile/5444/4445_4", "(4,4,4,5) x4", "", 0, "bf/8d/RydoKPns"},
+{-1, "hr/polyforms-3737/5-16 + 5-38/3737 5-16 + 5-38 s33", "3737 polyforms, 5-16 + 5-38, s33", "", 0, "8d/d8/Zhxu7fqT"},
+{-1, "hr/polyforms-3737/5-16 + 5-38/3737 5-16 + 5-38 s07", "3737 polyforms, 5-16 + 5-38, s7", "", 0, "2c/40/gTTzfVte"},
+{-1, "hr/polyforms-3737/5-16 + 5-38/3737 5-16 + 5-38 s02", "3737 polyforms, 5-16 + 5-38, s2", "", 0, "73/ea/Lrlf25RP"},
+{-1, "hr/polyforms-3737/5-16 + 5-38/3737 5-16 + 5-38 s31", "3737 polyforms, 5-16 + 5-38, s31", "", 0, "ad/d8/B55eTEAP"},
+{-1, "multitile/3-11/2+2/3-11-2f+2f-06", "{3,11}, diamond 1F + diamond 1F, solution 6", "", 0, "be/96/F6yQHvkv"},
+{-1, "multitile/3-11/2+2/3-11-2f+2f-04", "{3,11}, diamond 1F + diamond 1F, solution 4", "", 0, "25/21/smgvLYGW"},
+{-1, "twobrid/4488twobrid/4488twobrid 5-5-1", "(4,4,8,8) twobrid, (4s,8s,4s,8s)+(4s,8s,[8l])+(4s,8s,8l,4l,8l)+([4l],[8l])x2", "", 0, "48/48/uCGF4kwY"},
+{-1, "other/45halfdomino/halfdomino45grid-15", "{4,5} half-domino, grid 15", "", 0, "b6/31/KDjSKNKV"},
+{-1, "pseudo-Archimedean/356i hybrid/3669/10/2 (55)/356i 4a5 5a2 5b3 162", "(3,5,6,18) hybrid, (3,6,6,9)x5, (3,6,9,6)Ax2, (3,6,9,6)Fx3", "", 0, "24/28/cf0TtdvP"},
+{-1, "archimedean/6-valent/3-3-4-4-6-6/mFCFDCD", "(6,3,6,4,3,4)", "edge=1.71911 tiles=6 dual=4", 1, "90/d6/cbYDihpA"},
+{0, "sample/brickwork", "brickwork", "a simple test<br/>", 0, "8d/1c/ropBeVXQ"},
+*/
 };
 
-string imglink(tesdata *t) {
-  string link = t->link;
-  return "<img src=\"https://images2.imgbox.com/" + link + "_o.png\"/>";
+void set_value(string name, string s);
+
+bool hr_initialized;
+
+string pattern = "mirror";
+string projh = "poincare";
+string proje = "medium";
+string projs = "ortho";
+
+void ensure_hr_initialized() {
+  if(hr_initialized) return;
+  hr_initialized = true;
+
+  // for(auto& w: *hr::all_debugflags) w.second->enabled = true;
+  // hr::debug_memory_cell.enabled = false;
+
+  printf("initializing the HR configuration\n");
+  hr::init_floorcolors();
+  hr::initConfig();
+  printf("initializing the HR settings\n");
+  hr::geometry = hr::gNormal;
+  hr::variation = hr::eVariation::pure;
+  hr::check_cgi();
+  hr::cgip->require_basics();
+  hr::cgip->require_shapes();
+  hr::rulegen::auto_rulegen = false;
+  hr::svg::svg_mode = 1;
+
+  hr::vid.use_smart_range = 2;
+  hr::vid.smart_area_based = true;
+  hr::vid.smart_range_detail = 1;
+  hr::vid.cells_generated_limit = 2000;
+  hr::modelcolor = 0x000000FF;
+
+  hr::backcolor = 0xFFFFFFFF;
+  // hr::bordcolor = 0xFFFFFFFF;
+  // hr::forecolor = 0;
+
+  hr::shot::shotx = 200;
+  hr::shot::shoty = 200;
+
+  hr::pconf.scale = 0.95;
+
+  hr::firstland = hr::specialland = hr::laCanvas;
+  hr::randomPatternsMode = false;
+  hr::land_structure = hr::lsSingle;
+  
+  hr::ccolor::which = &hr::ccolor::shape_mirror;
+
+  hr::mapeditor::drawplayer = false;
+  hr::global_boundary_ratio = 0.25;
+
+  hr::peace::on = true;
+
+  hr::alt_distlimit = 0;
+  hr::alt_BARLEV = 8;
   }
+
+bool currently_rendering = false;
+
+vector<tesdata*> tesdata_to_read;
+vector<tesdata*> render_delayed;
 
 const int ANY = -2;
 int curreq = ANY;
@@ -38,6 +125,169 @@ void set_value(string name, string s) {
     }, name.c_str(), int(name.size()),
     s.c_str(), int(s.size())
     );
+  }
+
+bool does_element_exist(string name) {
+  return EM_ASM_INT({
+    var name = UTF8ToString($0, $1);
+    return document.getElementById(name) ? 1 : 0;
+    }, name.c_str(), int(name.size()));
+  }
+
+void delay_render(string lnk) {
+  EM_ASM_({
+    var name = UTF8ToString($0, $1);
+    setTimeout(function() { render(name); }, 500);
+    }, lnk.c_str(), int(lnk.size()));
+  }
+
+map<string, string> link_to_tesfile;
+
+tesdata *tes_by_link(const string& s) {
+  int numdata = sizeof(alldata) / sizeof(tesdata);
+  for(int i=0; i<numdata; i++) if(alldata[i].link == s) return &alldata[i];
+  return nullptr;
+  }
+
+void enter_tessellation(tesdata *td) {
+  ensure_hr_initialized();
+
+  printf("stopping game\n");
+  hr::stop_game();
+
+  printf("creating normal geometry\n");
+  hr::geometry = hr::gNormal;
+  hr::check_cgi();
+  hr::cgip->require_basics();
+
+  using namespace hr;
+  if(pattern == "mirror")
+    hr::ccolor::which = &hr::ccolor::shape_mirror;
+  if(pattern == "shape")
+    hr::ccolor::which = &hr::ccolor::shape;
+  if(pattern == "sides")
+    hr::ccolor::which = &hr::ccolor::sides;
+  if(pattern == "white")
+    hr::ccolor::which = &hr::ccolor::plain, hr::ccolor::rwalls = 0, ccolor::plain.ctab = {0xFFFFFF}; 
+  if(pattern == "random")
+    hr::ccolor::which = &hr::ccolor::random, hr::ccolor::rwalls = 0;
+
+  if(td->kind == 0) {
+    printf("creating the input.tes file for %s\n", td->fname);
+    FILE *f = fopen("input.tes", "wt");
+    fprintf(f, "%s", link_to_tesfile[td->link].c_str());
+    fclose(f);
+
+    printf("running the tessellation\n");
+    hr::arb::run("input.tes");
+    unlink("input.tes");
+    }
+  else {
+    hr::variation = hr::eVariation::pure;
+    hr::arcm::load_symbol(td->label, true);
+    hr::start_game();
+    }
+
+  string choice = euclid ? proje : sphere ? projs : projh;
+
+  if(choice == "poincare" || choice == "stereo") pmodel = mdDisk, pconf.alpha = 1, pconf.scale = 0.95;
+  if(choice == "klein" || choice == "gnomonic") pmodel = mdDisk, pconf.alpha = 0, pconf.scale = 0.95;
+  if(choice == "gans") pmodel = mdDisk, pconf.alpha = 999, pconf.scale = 200;
+  if(choice == "aed") pmodel = mdEquidistant, pconf.scale = 0.75;
+  if(choice == "aea") pmodel = mdEquiarea, pconf.scale = 0.75;
+  if(choice == "egg") pmodel = mdConformalEgg, pconf.scale = 0.9;
+  if(choice == "ortho") pmodel = mdDisk, pconf.alpha = 999, pconf.scale = 950;
+  if(choice == "large") pmodel = mdDisk, pconf.alpha = 1, pconf.scale = 0.95;
+  if(choice == "medium") pmodel = mdDisk, pconf.alpha = 1, pconf.scale = 0.5;
+  if(choice == "small") pmodel = mdDisk, pconf.alpha = 1, pconf.scale = 0.25;
+  if(choice == "mercator") pmodel = mdBand, pconf.alpha = mdBand, pconf.scale = 0.5;
+  if(choice == "band") pmodel = mdBand, pconf.alpha = mdBand, pconf.scale = 1;
+  if(choice == "halfplane") pmodel = mdHalfplane, pconf.alpha = 1, pconf.scale = 0.95;
+  if(choice == "square") pmodel = mdConformalSquare, pconf.alpha = 1, pconf.scale = 0.95;
+
+  pattern = "";
+  }
+
+string render_tessellation() {
+
+  hr::dynamicval<int> db(hr::floorshapes_level, 1);
+
+  printf("taking the screenshot\n");
+  hr::shot::format = hr::shot::screenshot_format::svg;
+  hr::shot::take("input.svg");
+
+  printf("cellcount = %d\n", hr::cellcount);
+  string ret = hr::svg::sout.s;
+  hr::svg::sout.s = "";
+  return ret;
+  }
+
+bool needs_tesfile(tesdata *td) {
+  if(td->kind == 0 && !link_to_tesfile.count(td->link)) return true;
+  return false;
+  }
+
+string imglink(tesdata* t) {
+  string link = t->link;
+  if(needs_tesfile(t)) {
+    tesdata_to_read.push_back(t);
+    return "<div id='" + link + "'>(loading)</div>";
+    }
+  else {
+    render_delayed.push_back(t);
+    return "<div id='" + link + "'>(rendering)</div>";
+    }
+  }
+
+void delayed_render(const string& lnk) {
+  if(does_element_exist(lnk)) {
+    if(currently_rendering) { set_value(lnk, "waiting"); delay_render(lnk); return; }
+    hr::dynamicval<bool> cr(currently_rendering, true);
+    enter_tessellation(tes_by_link(lnk));
+    set_value(lnk, render_tessellation());
+    }
+  }
+
+void tesdata_succeeded(emscripten_fetch_t *fetch) {
+  const char *lnk = (const char*) fetch->userData;
+  string content(fetch->data, fetch->numBytes);
+  emscripten_fetch_close(fetch);
+
+  link_to_tesfile[lnk] = content;
+
+  if(does_element_exist(lnk)) {
+    if(currently_rendering) { set_value(lnk, "waiting"); delay_render(lnk); return; }
+    hr::dynamicval<bool> cr(currently_rendering, true);
+    enter_tessellation(tes_by_link(lnk));
+    set_value(lnk, render_tessellation());
+    }
+  }
+
+void tesdata_failed(emscripten_fetch_t *fetch) {
+  const char *lnk = (const char*) fetch->userData;
+  set_value(lnk, "[failed]");
+  emscripten_fetch_close(fetch);
+  }
+
+void tesdata_progress(emscripten_fetch_t *fetch) { }
+
+void read_tesdata(tesdata& t) {
+  set_value(t.link, "[loading]");
+
+  emscripten_fetch_attr_t attr;
+  emscripten_fetch_attr_init(&attr);
+  strcpy(attr.requestMethod, "GET");
+  attr.attributes = EMSCRIPTEN_FETCH_LOAD_TO_MEMORY | EMSCRIPTEN_FETCH_PERSIST_FILE;
+  attr.userData = (void*) t.link;
+  attr.onsuccess = tesdata_succeeded;
+  attr.onerror = tesdata_failed;
+  attr.onprogress = tesdata_progress;
+
+  string full_fname = "https://zenorogue.github.io/tes-catalog/files/tessellations/";
+  full_fname += t.fname;
+  full_fname += ".tes";
+
+  emscripten_fetch(&attr, full_fname.c_str());
   }
 
 void set_location(string s) {
@@ -123,6 +373,9 @@ void generate_page(string s) {
   
   vector<tesdata*> matching;
   matching.reserve(numdata);
+
+  tesdata_to_read.clear();
+  render_delayed.clear();
 
   for(int i=0; i<numdata; i++) {
     auto& td = alldata[i];
@@ -299,11 +552,82 @@ void generate_page(string s) {
     }
 
   set_value("all", out);
+
+  for(auto td: tesdata_to_read) read_tesdata(*td);
+  for(auto td: render_delayed) delay_render(td->link);
+  }
+
+void play_tessellation(const string &s, const string &lnk) {
+  tesdata *which = tes_by_link(lnk);
+
+  stringstream play_page;
+  if(!which) {
+    play_page <<
+      "Illegal tessellation!</br!>"
+      "<input type='button' value='go back' onclick=\"jump('" + s + "')\"/>";
+    set_value("all", play_page.str());
+    }
+  else {
+
+    EM_ASM_({
+      canvas = document.getElementById('canvas');
+      canvas.style.display = "";
+      Module['canvas'] = canvas;
+      });
+
+    play_page <<
+      "<span id='controls'>"
+        "<span><input type='checkbox' id='resize'>Resize canvas</span>"
+        "<span><input type='checkbox' id='pointerLock' checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>"
+        "<span><input type='button' value='Fullscreen' onclick=\"Module.requestFullscreen(document.getElementById('pointerLock').checked, document.getElementById('resize').checked)\">"
+        "<input type='button' value='go back' onclick=\"close_gfx(); jump('" + s + "')\"/>"
+        "</span>";
+    set_value("all", play_page.str());
+    enter_tessellation(tes_by_link(lnk));
+    hr::svg::svg_mode = 2;
+    if(!hr::graphics_on) hr::init_graph();
+    hr::mainloop();
+    hr::popScreenAll();
+    hr::clearMessages();
+    }  
+  }
+
+void view_option_screen(const char *s) {
+  stringstream ss;
+
+  ss << "<input id=\"width\" size=10 value='"<< hr::global_boundary_ratio<<"' type=text/> width: bigger = wider cell boundaries<br/>";
+  ss << "<input id=\"shotx\" size=10 value='"<< hr::shot::shotx<<"' type=text/> image X size<br/>";
+  ss << "<input id=\"shoty\" size=10 value='"<< hr::shot::shoty<<"' type=text/> image Y size<br/>";
+  ss << "<input id=\"detail\" size=10 value='"<< hr::vid.smart_range_detail <<"' type=text/> detail: smaller = more detail<br/>";
+
+  auto list = [&] (string title, std::initializer_list<const char*> l) {
+    for(auto w: l) ss << " <a href=\"javascript: document.getElementById('" << title << "').value='" << w << "'; void(0);\">" << w << "</a>";
+    return "";
+    };
+
+  ss << "<input id=\"pattern\" size=10 value='"<< pattern <<"' type=text/> pattern: " << list("pattern", {"shape", "mirror", "sides", "white", "random"}) << "<br/>";
+  ss << "<input id=\"ph\" size=10 value='"<< projh <<"' type=text/> hyperbolic projection: " << list("ph", {"poincare", "klein", "gans", "halfplane", "square", "aed", "aea", "egg", "band"}) << "<br/>";
+  ss << "<input id=\"pe\" size=10 value='"<< proje <<"' type=text/> Euclidean projection: " << list("pe", {"large", "medium", "small"}) << "<br/>";
+  ss << "<input id=\"ps\" size=10 value='"<< projs <<"' type=text/> Spherical projection: " << list("ps", {"ortho", "stereo", "gnomonic", "mercator"}) << "<br/>";
+
+  ss << "<br/><br/>";
+  ss << "<br/><br/>";
+
+  ss << genlink(s, "go back without changes") + "<br/><br/>";
+
+  ss << "<a href=\"javascript:activate(); jump('" << s << "')\">activate these changes</a>";
+
+  set_value("all", ss.str());
   }
 
 extern "C" {
   void doit(const char *s) {
     generate_page(s);
     }
+
+  void render(const char *s) {
+    delayed_render(s);
+    }
+
   }
 

@@ -191,6 +191,7 @@ function mayload(name)
     <script> 
       function doit(s) { Module.ccall('doit', 'null', ['string'], [s]); }
       function jump(s) { Module.ccall('doit', 'null', ['string'], [s]); }
+      function render(s) { Module.ccall('render', 'null', ['string'], [s]); }
 
       window.onpopstate = function(event) { jump(event.state) }
 
