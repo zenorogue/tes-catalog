@@ -16,7 +16,7 @@ struct tesdata {
   const char *link;
   };
 
-vector<tesdata> alldata = {
+tesdata alldata[] = {
 #include "table.cpp"
 #include "table-arcm.cpp"
 #include "table-upto5.cpp"
@@ -82,7 +82,9 @@ void generate_page(string s) {
   string out;
   string parent;
   
-  sort(alldata.begin(), alldata.end(), [] (const tesdata& d1, const tesdata& d2) { return numstrcmp(d1.fname, d2.fname) < 0; });
+  int numdata = sizeof(alldata) / sizeof(tesdata);
+
+  sort(alldata, alldata + numdata, [] (const tesdata& d1, const tesdata& d2) { return numstrcmp(d1.fname, d2.fname) < 0; });
   
   string prefix;
   curreq = ANY;
@@ -119,9 +121,10 @@ void generate_page(string s) {
   int len = s.size();
   
   vector<tesdata*> matching;
-  matching.reserve(alldata.size());
+  matching.reserve(numdata);
 
-  for(auto& td: alldata) {
+  for(int i=0; i<numdata; i++) {
+    auto& td = alldata[i];
     if(td.type != curreq && curreq != ANY) continue;
     if(at(td.fname, s)) 
       matching.push_back(&td);
